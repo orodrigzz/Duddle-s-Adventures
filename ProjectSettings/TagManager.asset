@@ -13,6 +13,9 @@ TagManager:
   - Asteroid
   - FINAL BOOS
   - Scenario
+  - Slimos
+  - Ground
+  - Pigero
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

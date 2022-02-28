@@ -31,9 +31,6 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.E))
-        //    Dmg(1);
-
         if(currHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -50,5 +47,15 @@ public class Health : MonoBehaviour
         {
             Dmg(1);
         }
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            Dmg(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    public void AddHealth(float _value)
+    {
+        currHealth += _value;
     }
 }

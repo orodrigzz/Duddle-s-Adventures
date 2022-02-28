@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spr_render;
 
+    private int green = 0;
+    private int red = 0;
+    private int yellow = 0;
+
     private int runningID;
     private int jumpingID;
 
@@ -193,13 +197,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Scenario")
+        if (collision.tag == "GreenCont")
         {
-            isJumping = true;
-            canWallJump = false;
-            jumpDir = Direction.NONE;
+            Destroy(collision.gameObject);
+            green++;
         }
     }
 

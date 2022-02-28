@@ -16,6 +16,8 @@ TagManager:
   - Slimos
   - Ground
   - Pigero
+  - Floor
+  - GreenCont
   layers:
   - Default
   - TransparentFX

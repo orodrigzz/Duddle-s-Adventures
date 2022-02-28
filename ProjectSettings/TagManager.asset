@@ -18,6 +18,11 @@ TagManager:
   - Pigero
   - Floor
   - GreenCont
+  - SlimoGreen
+  - SlimoYellow
+  - PigeroGreen
+  - PigeroYellow
+  - PigeroRed
   layers:
   - Default
   - TransparentFX

@@ -43,10 +43,38 @@ public class Health : MonoBehaviour
         {
             Dmg(1);
         }
+        if (collision.gameObject.CompareTag("SlimoGreen"))
+        {
+            Dmg(2);
+        }
+        if (collision.gameObject.CompareTag("SlimoYellow"))
+        {
+            Dmg(3);
+        }
+        if (collision.gameObject.CompareTag("SlimoRed"))
+        {
+            Dmg(4);
+        }
+
+
         if (collision.gameObject.CompareTag("Pigero"))
         {
             Dmg(1);
         }
+        if (collision.gameObject.CompareTag("PigeroGreen"))
+        {
+            Dmg(2);
+        }
+        if (collision.gameObject.CompareTag("PigeroYellow"))
+        {
+            Dmg(3);
+        }
+        if (collision.gameObject.CompareTag("PigeroRed"))
+        {
+            Dmg(4);
+        }
+
+
         if (collision.gameObject.CompareTag("Floor"))
         {
             Dmg(1);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class slimo : MonoBehaviour
 {
     public float HP;
+    public float DMG;
     // Start is called before the first frame update
     void Start()
     {

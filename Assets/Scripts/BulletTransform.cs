@@ -2,28 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pigero : MonoBehaviour
+public class BulletTransform : MonoBehaviour
 {
-
-    public float HP = 3;
+    private SpriteRenderer spr_render;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spr_render = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HP <= 0)
+        if (transform.rotation.z > 90)
         {
-            Destroy(gameObject);
+            spr_render.flipX = true;
         }
     }
 
-    public void Dmg(float _dmg)
-    {
-        HP -= _dmg;
-
-    }
 }

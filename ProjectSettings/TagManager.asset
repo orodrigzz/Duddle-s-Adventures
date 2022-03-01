@@ -25,6 +25,9 @@ TagManager:
   - PigeroRed
   - DoubleJump
   - ChargedBullet
+  - BulletTransform
+  - BW_Bullet
+  - Green_bullet
   layers:
   - Default
   - TransparentFX

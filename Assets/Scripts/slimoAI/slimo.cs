@@ -19,4 +19,10 @@ public class slimo : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Dmg(float _dmg)
+    {
+        HP -= _dmg;
+
+    }
 }

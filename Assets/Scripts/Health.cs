@@ -33,11 +33,11 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Slimos"))
         {
-            Dmg(1);
+            Dmg(0.5f);
         }
         if (collision.gameObject.CompareTag("SlimoGreen"))
         {
-            Dmg(1.5f);
+            Dmg(1);
         }
         if (collision.gameObject.CompareTag("SlimoYellow"))
         {

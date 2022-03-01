@@ -18,15 +18,7 @@ public class Health : MonoBehaviour
     public void Dmg(float _dmg)
     {
         currHealth -= _dmg;
-         
-        if (currHealth > 0)
-        {
-            //daño
-        }
-        else
-        {
-            //muere
-        }
+        
     }
 
     private void Update()
@@ -45,33 +37,33 @@ public class Health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("SlimoGreen"))
         {
-            Dmg(2);
+            Dmg(1.5f);
         }
         if (collision.gameObject.CompareTag("SlimoYellow"))
         {
-            Dmg(3);
+            Dmg(2);
         }
         if (collision.gameObject.CompareTag("SlimoRed"))
         {
-            Dmg(4);
+            Dmg(2.5f);
         }
 
 
         if (collision.gameObject.CompareTag("Pigero"))
         {
-            Dmg(1);
+            Dmg(0.5f);
         }
         if (collision.gameObject.CompareTag("PigeroGreen"))
         {
-            Dmg(2);
+            Dmg(1);
         }
         if (collision.gameObject.CompareTag("PigeroYellow"))
         {
-            Dmg(3);
+            Dmg(1.5f);
         }
         if (collision.gameObject.CompareTag("PigeroRed"))
         {
-            Dmg(4);
+            Dmg(2);
         }
 
 

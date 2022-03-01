@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Direction { NONE, UP, DOWN, LEFT, RIGHT };
 
@@ -32,6 +33,13 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
+
+    [SerializeField] private Image Green;
+    [SerializeField] private Image Yellow;
+    [SerializeField] private Image Red;
+    [SerializeField] private Image Green_;
+    [SerializeField] private Image Yellow_;
+    [SerializeField] private Image Red_;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +96,19 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(jumpingID, isJumping);
         }
         wasJumping = isJumping;
+
+        if (green == 1)
+        {
+            Green_.fillAmount = 0;
+        }
+        if (yellow == 1)
+        {
+            Yellow_.fillAmount = 0;
+        }
+        if (red == 1)
+        {
+            Red_.fillAmount = 0;
+        }
     }
 
     private void FixedUpdate()
@@ -203,6 +224,16 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             green++;
+        }
+        if (collision.tag == "YellowCont")
+        {
+            Destroy(collision.gameObject);
+            yellow++;
+        }
+        if (collision.tag == "RedCont")
+        {
+            Destroy(collision.gameObject);
+            red++;
         }
     }
 

@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private bool wasJumping;
     private bool jumpPerformed;
     private bool canWallJump;
+    private bool doublejump;
+    private bool chargedbullet;
     private Direction jumpDir;
 
     public float moveSpeed = 4;
@@ -57,6 +59,8 @@ public class PlayerController : MonoBehaviour
         wasJumping = false;
         jumpPerformed = true;
         canWallJump = false;
+        chargedbullet = false;
+        doublejump = false;
 
         moveDir = Direction.NONE;
     }
@@ -88,6 +92,41 @@ public class PlayerController : MonoBehaviour
                 isJumping = true;
             }
         }
+
+        if (doublejump = true){
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                jumpPerformed = false;
+                isJumping = true;
+            }
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        //{
+        //    if (chargedbullet = true)
+        //    {
+        //        //INSTANCIA BOLA GORDA
+        //    }
+
+        //    // INSTANCIA BALA
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //    if (green == 1)
+        //    {
+        //        //INSTANCIA BALA VERDE
+        //    }
+        //    if (yellow == 1)
+        //    {
+        //        //INSTANCIA BALA AMARILLA
+        //    }
+        //    if (red == 1)
+        //    {
+        //        //INSTANCIA BALA ROJA 
+        //    }
+
+        //}
 
 
         anim.SetBool(runningID, isRunning);
@@ -234,6 +273,16 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             red++;
+        }
+        if (collision.tag == "DoubleJump")
+        {
+            Destroy(collision.gameObject);
+            doublejump = true;
+        }
+        if (collision.tag == "ChargedBullet")
+        {
+            Destroy(collision.gameObject);
+            chargedbullet = true;
         }
     }
 

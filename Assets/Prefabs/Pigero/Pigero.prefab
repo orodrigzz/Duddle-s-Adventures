@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7732435083557474906}
   - component: {fileID: 2297083022942555278}
   - component: {fileID: 7732435083557474910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pigero
-  m_TagString: Untagged
+  m_TagString: Pigero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

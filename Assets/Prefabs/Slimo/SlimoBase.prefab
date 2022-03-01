@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7801551027406369550}
   - component: {fileID: 8795188804123091751}
   - component: {fileID: 7801551027406369549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimoBase
   m_TagString: Slimos
   m_Icon: {fileID: 0}

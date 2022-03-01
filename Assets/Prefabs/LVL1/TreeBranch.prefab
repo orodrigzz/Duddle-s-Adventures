@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6240597377346953345}
   - component: {fileID: 6240597377346953350}
   - component: {fileID: 6240597377346953351}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: TreeBranch
   m_TagString: Scenario
   m_Icon: {fileID: 0}

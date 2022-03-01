@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1125948857342852909}
   - component: {fileID: 7669402799079561944}
   - component: {fileID: 8278877780511923039}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: CloudLedgeRight
   m_TagString: Scenario
   m_Icon: {fileID: 0}

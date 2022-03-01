@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 130917486419376883}
   - component: {fileID: 130917486419376886}
   - component: {fileID: 130917486419376881}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: CloudMiddle
   m_TagString: Scenario
   m_Icon: {fileID: 0}

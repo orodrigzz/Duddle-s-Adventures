@@ -7,6 +7,12 @@ public class pigero : MonoBehaviour
 
     public float HP = 3;
     // Start is called before the first frame update
+
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+    }
+
     void Start()
     {
         

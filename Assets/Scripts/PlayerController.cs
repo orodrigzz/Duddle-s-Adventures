@@ -71,13 +71,13 @@ public class PlayerController : MonoBehaviour
         moveDir = Direction.NONE;
         isRunning = false;
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             isRunning = true;
             moveDir = Direction.RIGHT;
             spr_render.flipX = false;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             isRunning = true;
             moveDir = Direction.LEFT;

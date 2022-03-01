@@ -23,21 +23,21 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance,whatIsSolid);
         if(hitInfo.collider != null)
         {
-            if (hitInfo.collider.CompareTag("Slimos"))
+            if (hitInfo.collider.CompareTag("Slimos") || hitInfo.collider.CompareTag("SlimoGreen"))
             {
                 //Debug.Log("Enemy must take dmg");
                 hitInfo.collider.GetComponent<slimo>() .TakeDamage(damage);
                 DestroyProjectile();
             }
-            
+            DestroyProjectile();
 
-            if (hitInfo.collider.CompareTag("Pigero"))
+            if (hitInfo.collider.CompareTag("Pigero") || hitInfo.collider.CompareTag("PigeroGreen"))
             {
                 //Debug.Log("Enemy must take dmg");
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);
                 DestroyProjectile();
             }
-            
+            DestroyProjectile();
         }
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);

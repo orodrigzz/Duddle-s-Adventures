@@ -23,6 +23,8 @@ TagManager:
   - PigeroGreen
   - PigeroYellow
   - PigeroRed
+  - DoubleJump
+  - ChargedBullet
   layers:
   - Default
   - TransparentFX

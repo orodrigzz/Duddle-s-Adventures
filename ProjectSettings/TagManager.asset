@@ -29,6 +29,8 @@ TagManager:
   - BW_Bullet
   - Green_bullet
   - Enemies
+  - YellowCont
+  - RedCont
   layers:
   - Default
   - TransparentFX

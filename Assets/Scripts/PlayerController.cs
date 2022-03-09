@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spr_render = GetComponent<SpriteRenderer>();
-
+    
         runningID = Animator.StringToHash("isMoving");
         jumpingID = Animator.StringToHash("isJumping");
 
@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
             isRunning = true;
             moveDir = Direction.LEFT;
             spr_render.flipX = true;
+            // flip gun x
         }
 
         if (!isJumping || canWallJump)
@@ -104,15 +105,15 @@ public class PlayerController : MonoBehaviour
         //{
         //    if (green == 1)
         //    {
-        //        //INSTANCIA BALA VERDE
+        //        CARGA VERDE
         //    }
         //    if (yellow == 1)
         //    {
-        //        //INSTANCIA BALA AMARILLA
+        //        CARGA AMARILLA
         //    }
         //    if (red == 1)
         //    {
-        //        //INSTANCIA BALA ROJA 
+        //        CARGA ROJA 
         //    }
 
         //}

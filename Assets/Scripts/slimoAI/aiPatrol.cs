@@ -16,12 +16,12 @@ public class aiPatrol : MonoBehaviour
     {
         if (MoveRight){
             transform.Translate(2 * Time.deltaTime * walkSpeed, 0, 0);
-            transform.localScale = new Vector2(10, 10);
+            transform.localScale = new Vector2(2, 2);
         }
         else
         {
             transform.Translate(-2 * Time.deltaTime * walkSpeed, 0, 0);
-            transform.localScale = new Vector2(-10, 10);
+            transform.localScale = new Vector2(-2, 2);
         }
     }
 

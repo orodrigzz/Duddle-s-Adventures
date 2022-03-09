@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
 
+
     [SerializeField] private float startHealth;
     public float currHealth;
 
     private void Awake()
     {
         currHealth = startHealth;
-
     }
 
     public void Dmg(float _dmg)

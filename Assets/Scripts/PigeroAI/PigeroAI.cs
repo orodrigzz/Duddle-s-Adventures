@@ -17,12 +17,12 @@ public class PigeroAI : MonoBehaviour
         if (MoveRight)
         {
             transform.Translate(2 * Time.deltaTime * walkSpeed, 0, 0);
-            transform.localScale = new Vector2(8, 8);
+            transform.localScale = new Vector2(2, 2);
         }
         else
         {
             transform.Translate(-2 * Time.deltaTime * walkSpeed, 0, 0);
-            transform.localScale = new Vector2(-8, 8);
+            transform.localScale = new Vector2(-2, 2);
         }
     }
 

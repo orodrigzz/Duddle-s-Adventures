@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class pigero : MonoBehaviour
 {
-
+    public float knockbackPower = 100;
+    public float knockbackDuration = 1;
     public float HP = 3;
     // Start is called before the first frame update
 
@@ -31,5 +32,13 @@ public class pigero : MonoBehaviour
     {
         HP -= _dmg;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(PlayerController.instance.Knowckback(knockbackDuration, knockbackPower, this.transform));
+        }
     }
 }

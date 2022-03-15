@@ -66,6 +66,11 @@ public class Health : MonoBehaviour
             Dmg(2);
         }
 
+        if (collision.gameObject.CompareTag("SpittlerProjectile"))
+        {
+            Dmg(1f);
+        }
+
 
         if (collision.gameObject.CompareTag("Floor"))
         {

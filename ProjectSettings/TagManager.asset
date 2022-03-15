@@ -31,6 +31,8 @@ TagManager:
   - Enemies
   - YellowCont
   - RedCont
+  - Spittler
+  - SpittlerProjectile
   layers:
   - Default
   - TransparentFX

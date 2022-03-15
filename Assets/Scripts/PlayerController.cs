@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
+    //for knockback
+    public static PlayerController instance;
 
     [SerializeField] private Image Green;
     [SerializeField] private Image Yellow;
@@ -42,6 +44,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
     [SerializeField] private Image Red_;
+
+    //for knockback
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -274,6 +282,21 @@ public class PlayerController : MonoBehaviour
         //    Destroy(collision.gameObject);
         //    chargedbullet = true;
         //}
+    }
+
+    //for knockback
+    public IEnumerator Knowckback(float knockbackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb2d.AddForce(-direction * knockbackPower);
+        }
+
+        yield return 0;
     }
 
 }

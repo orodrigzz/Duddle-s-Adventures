@@ -33,6 +33,7 @@ TagManager:
   - RedCont
   - Spittler
   - SpittlerProjectile
+  - Red_bullet
   layers:
   - Default
   - TransparentFX

@@ -83,4 +83,17 @@ public class Health : MonoBehaviour
     {
         currHealth += _value;
     }
+
+    public void HealPlayer(float _value)
+    {
+        if (startHealth == currHealth - 0.5f)
+        {
+            currHealth = currHealth + 0.5f;
+        }
+        if (currHealth < 5)
+        {
+            currHealth += _value;
+        }
+
+    }
 }

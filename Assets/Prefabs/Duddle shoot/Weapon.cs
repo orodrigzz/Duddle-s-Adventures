@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Sprite greenGun;
+    public Sprite yellowGun;
+    public Sprite redGun;
+
+
     [SerializeField] PlayerController player;
 
     public float offset;
@@ -11,9 +16,6 @@ public class Weapon : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     [SerializeField] SpriteRenderer spr_render;
-
-
-    //public bool flipX;
 
     public GameObject projectile;
     public Transform shotPoint;
@@ -29,7 +31,7 @@ public class Weapon : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
         currentAngle = transform.rotation.eulerAngles.z;
 
-        if ((currentAngle<90.0f && currentAngle>0.0f) ||
+        if ((currentAngle < 90.0f && currentAngle > 0.0f) ||
             (currentAngle > 270.0f && currentAngle < 360.0f)
             )
         {
@@ -55,17 +57,20 @@ public class Weapon : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            //spr_render.flipX = true;
-
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                //spr_render.flipX = false;
-            }
+            //if (green == 1)
+            //{
+                spr_render.sprite = greenGun;
+            //}
+            //if (yellow == 1)
+            //{
+            //    spr_render.sprite = yellowGun;
+            //}
+            //if (red == 1)
+            //{
+            //    spr_render.sprite = redGun;
+            //}
         }
-
     }
-
-
 }

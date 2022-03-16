@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public enum Direction { NONE, UP, DOWN, LEFT, RIGHT };
 
 public class PlayerController : MonoBehaviour
 {
+    public Sprite greenGun;
+    public Sprite yellowGun;
+    public Sprite redGun;
+
     private BoxCollider2D box2D;
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -41,6 +46,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image Green;
     [SerializeField] private Image Yellow;
     [SerializeField] private Image Red;
+
+    internal void FlipX(bool v)
+    {
+        spr_render.flipX = v;
+    }
+
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
     [SerializeField] private Image Red_;
@@ -83,13 +94,13 @@ public class PlayerController : MonoBehaviour
         {
             isRunning = true;
             moveDir = Direction.RIGHT;
-            spr_render.flipX = false;
+            //spr_render.flipX = false;
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             isRunning = true;
             moveDir = Direction.LEFT;
-            spr_render.flipX = true;
+            //spr_render.flipX = true;
             // flip gun x
         }
 
@@ -109,22 +120,22 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //if (Input.GetKeyDown(KeyCode.Mouse1))
-        //{
-        //    if (green == 1)
-        //    {
-        //        CARGA VERDE
-        //    }
-        //    if (yellow == 1)
-        //    {
-        //        CARGA AMARILLA
-        //    }
-        //    if (red == 1)
-        //    {
-        //        CARGA ROJA 
-        //    }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (green == 1)
+            {
+                spr_render.sprite = greenGun;
+            }
+            if (yellow == 1)
+            {
+                spr_render.sprite = yellowGun;
+            }
+            if (red == 1)
+            {
+                spr_render.sprite = redGun;
+            }
 
-        //}
+        }
 
 
         anim.SetBool(runningID, isRunning);

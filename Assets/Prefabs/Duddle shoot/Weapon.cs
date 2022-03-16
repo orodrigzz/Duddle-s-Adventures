@@ -4,30 +4,43 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] PlayerController player;
 
     public float offset;
 
     private float timeBtwShots;
     public float startTimeBtwShots;
-    private SpriteRenderer spr_render;
+    [SerializeField] SpriteRenderer spr_render;
+
 
     //public bool flipX;
 
     public GameObject projectile;
     public Transform shotPoint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        spr_render = GetComponent<SpriteRenderer>();
-    }
 
+    Vector3 difference;
+    float rotZ;
+    float currentAngle;
     // Update is called once per frame
     void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        currentAngle = transform.rotation.eulerAngles.z;
 
+        if ((currentAngle<90.0f && currentAngle>0.0f) ||
+            (currentAngle > 270.0f && currentAngle < 360.0f)
+            )
+        {
+            spr_render.flipY = false;
+            player.FlipX(false);
+        }
+        else
+        {
+            spr_render.flipY = true;
+            player.FlipX(true);
+        }
 
         if (timeBtwShots <= 0)
         {
@@ -42,11 +55,11 @@ public class Weapon : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.mousePosition.x > 90)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             //spr_render.flipX = true;
 
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.mousePosition.x < 90)
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 //spr_render.flipX = false;
             }

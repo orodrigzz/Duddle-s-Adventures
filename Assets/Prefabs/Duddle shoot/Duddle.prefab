@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436575218724933808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.3499, y: 1.0901375, z: 7.2804174}
+  m_LocalPosition: {x: 79.7, y: 1.0901375, z: 7.2804174}
   m_LocalScale: {x: 90, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 216932668992115514}
@@ -40,9 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1436575219024113481}
   - component: {fileID: 1436575219024113487}
-  - component: {fileID: 1436575219024113486}
   m_Layer: 0
-  m_Name: gun
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +55,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436575219024113480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34, y: -5, z: 7}
-  m_LocalScale: {x: 90, y: 90, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 216932668992115514}
   m_RootOrder: 0
@@ -113,22 +112,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &1436575219024113486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436575219024113480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd53f4de884475d4095c068d3564618e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  startTimeBtwShots: 0.25
-  projectile: {fileID: 1876148337922398945, guid: bae79bcf5f2002341b1622d8392785d0, type: 3}
-  shotPoint: {fileID: 1436575218724933809}
 --- !u!1 &3412561220951276747
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +123,7 @@ GameObject:
   - component: {fileID: 216932668992115514}
   - component: {fileID: 7072627527874355631}
   m_Layer: 0
-  m_Name: Pivote
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,10 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd53f4de884475d4095c068d3564618e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1532308013593884697}
   offset: 0
   startTimeBtwShots: 0
-  projectile: {fileID: 0}
-  shotPoint: {fileID: 0}
+  spr_render: {fileID: 1436575219024113487}
+  projectile: {fileID: 1876148337922398945, guid: bae79bcf5f2002341b1622d8392785d0, type: 3}
+  shotPoint: {fileID: 1436575218724933809}
 --- !u!1 &3632911254191693863
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba65bb4cd0449c34fa6348b57f77a317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  greenGun: {fileID: 0}
+  yellowGun: {fileID: 0}
+  redGun: {fileID: 0}
   moveSpeed: 25
   jumpSpeed: 1100
   Green: {fileID: 0}

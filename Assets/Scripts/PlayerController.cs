@@ -260,7 +260,7 @@ public class PlayerController : MonoBehaviour
                     {
                         jumpDir = Direction.LEFT;
                     }
-                    canWallJump = true;
+                    canWallJump = false;
                 }
             }
         }

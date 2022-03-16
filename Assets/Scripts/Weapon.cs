@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public Sprite greenGun;
     public Sprite yellowGun;
     public Sprite redGun;
+    public Sprite gun;
 
 
     [SerializeField] PlayerController player;
@@ -62,15 +63,27 @@ public class Weapon : MonoBehaviour
             //if (green == 1)
             //{
                 spr_render.sprite = greenGun;
-            //}
-            //if (yellow == 1)
-            //{
-            //    spr_render.sprite = yellowGun;
-            //}
-            //if (red == 1)
-            //{
-            //    spr_render.sprite = redGun;
-            //}
-        }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                spr_render.sprite = yellowGun;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                spr_render.sprite = redGun;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                spr_render.sprite = gun;
+            }
+
+        //if (yellow == 1)
+        //{
+        //    spr_render.sprite = yellowGun;
+        //}
+        //if (red == 1)
+        //{
+        //    spr_render.sprite = redGun;
+        //}
+    }
     }
 }

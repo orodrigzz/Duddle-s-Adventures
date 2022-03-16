@@ -19802,6 +19802,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 21300000, guid: 48af9281494d5ef41858f4d5276b48c9, type: 3}
+    - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
       propertyPath: redGun
       value: 
       objectReference: {fileID: 21300000, guid: 3c1c65a6eb620614caef5347519a1a1c, type: 3}

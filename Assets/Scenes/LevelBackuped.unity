@@ -19801,6 +19801,22 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: redGun
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c1c65a6eb620614caef5347519a1a1c, type: 3}
+    - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: greenGun
+      value: 
+      objectReference: {fileID: 21300000, guid: 86e0d6d8776bc084cabc7eb3e4f72538, type: 3}
+    - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: yellowGun
+      value: 
+      objectReference: {fileID: 21300000, guid: eaa2ebe8daed21141bcc7ee9a477439f, type: 3}
+    - target: {fileID: 7072627527874355631, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: startTimeBtwShots
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
 --- !u!1001 &7078670028641012512

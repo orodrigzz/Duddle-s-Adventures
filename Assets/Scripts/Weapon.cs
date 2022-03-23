@@ -9,6 +9,10 @@ public class Weapon : MonoBehaviour
     public Sprite redGun;
     public Sprite gun;
 
+    private int green = 0;
+    private int red = 0;
+    private int yellow = 0;
+    public int balas = 20;
 
     [SerializeField] PlayerController player;
 
@@ -18,7 +22,10 @@ public class Weapon : MonoBehaviour
     public float startTimeBtwShots;
     [SerializeField] SpriteRenderer spr_render;
 
+
     public GameObject projectile;
+    public GameObject bullet_gr;
+    public GameObject bullet_btw;
     public Transform shotPoint;
 
     Vector3 difference;
@@ -47,10 +54,14 @@ public class Weapon : MonoBehaviour
 
         if (timeBtwShots <= 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (balas >= 1)
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                timeBtwShots = startTimeBtwShots;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Instantiate(projectile, shotPoint.position, transform.rotation);
+                    timeBtwShots = startTimeBtwShots;
+                    balas--;
+                }
             }
         }
         else
@@ -63,27 +74,59 @@ public class Weapon : MonoBehaviour
             //if (green == 1)
             //{
                 spr_render.sprite = greenGun;
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                spr_render.sprite = yellowGun;
-            }
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                spr_render.sprite = redGun;
-            }
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                spr_render.sprite = gun;
-            }
+                projectile = bullet_gr;
+                //if (Input.GetKeyDown(KeyCode.Mouse1))
+                //{
+                //    spr_render.sprite = yellowGun;
+                //}
+                //if (Input.GetKeyDown(KeyCode.Mouse1))
+                //{
+                //    spr_render.sprite = redGun;
+                //}
+                //if (Input.GetKeyDown(KeyCode.Mouse1))
+                //{
+                //    spr_render.sprite = gun;
+                //}
 
-        //if (yellow == 1)
-        //{
-        //    spr_render.sprite = yellowGun;
-        //}
-        //if (red == 1)
-        //{
-        //    spr_render.sprite = redGun;
-        //}
+                //if (yellow == 1)
+                //{
+                //    spr_render.sprite = yellowGun;
+                //}
+                //if (red == 1)
+                //{
+                //    spr_render.sprite = redGun;
+                //}
+                //}
+            }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            spr_render.sprite = gun;
+            projectile = bullet_btw;
+        }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "GreenCont")
+        {
+            Destroy(collision.gameObject);
+            green++;
+        }
+        if (collision.tag == "YellowCont")
+        {
+            Destroy(collision.gameObject);
+            yellow++;
+        }
+        if (collision.tag == "RedCont")
+        {
+            Destroy(collision.gameObject);
+            red++;
+        }
+        //if (collision.tag == "ChargedBullet")
+        //{
+        //    Destroy(collision.gameObject);
+        //    chargedbullet = true;
+        //}
     }
 }
+

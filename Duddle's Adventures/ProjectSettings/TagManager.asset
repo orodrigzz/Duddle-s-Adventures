@@ -34,6 +34,7 @@ TagManager:
   - Spittler
   - SpittlerProjectile
   - Red_bullet
+  - Yellow_bullet
   layers:
   - Default
   - TransparentFX

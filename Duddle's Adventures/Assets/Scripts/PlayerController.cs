@@ -13,10 +13,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spr_render;
 
-    private int green = 0;
-    private int red = 0;
-    private int yellow = 0;
-
     private int runningID;
     private int jumpingID;
 
@@ -31,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private bool jumpPerformed;
     private bool canWallJump;
     private bool doublejump;
-    //private bool chargedbullet;
     private Direction jumpDir;
 
     public float moveSpeed = 4;
@@ -39,18 +34,10 @@ public class PlayerController : MonoBehaviour
     //for knockback
     public static PlayerController instance;
 
-    [SerializeField] private Image Green;
-    [SerializeField] private Image Yellow;
-    [SerializeField] private Image Red;
-
     internal void FlipX(bool v)
     {
         spr_render.flipX = v;
     }
-
-    [SerializeField] private Image Green_;
-    [SerializeField] private Image Yellow_;
-    [SerializeField] private Image Red_;
 
     //for knockback
     private void Awake()
@@ -74,7 +61,6 @@ public class PlayerController : MonoBehaviour
         wasJumping = false;
         jumpPerformed = true;
         canWallJump = false;
-        //chargedbullet = false;
         doublejump = false;
 
         moveDir = Direction.NONE;
@@ -119,19 +105,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(jumpingID, isJumping);
         }
         wasJumping = isJumping;
-
-        if (green == 1)
-        {
-            Green_.fillAmount = 0;
-        }
-        if (yellow == 1)
-        {
-            Yellow_.fillAmount = 0;
-        }
-        if (red == 1)
-        {
-            Red_.fillAmount = 0;
-        }
     }
 
     private void FixedUpdate()
@@ -243,31 +216,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "GreenCont")
-        {
-            Destroy(collision.gameObject);
-            green++;
-        }
-        if (collision.tag == "YellowCont")
-        {
-            Destroy(collision.gameObject);
-            yellow++;
-        }
-        if (collision.tag == "RedCont")
-        {
-            Destroy(collision.gameObject);
-            red++;
-        }
         if (collision.tag == "DoubleJump")
         {
             Destroy(collision.gameObject);
             doublejump = true;
         }
-        //if (collision.tag == "ChargedBullet")
-        //{
-        //    Destroy(collision.gameObject);
-        //    chargedbullet = true;
-        //}
     }
 
     //for knockback

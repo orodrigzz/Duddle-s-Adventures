@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Weapon : MonoBehaviour
     private int red = 0;
     private int yellow = 0;
     public int balas = 20;
+    //private bool chargedbullet;
 
     [SerializeField] PlayerController player;
 
@@ -22,16 +24,31 @@ public class Weapon : MonoBehaviour
     public float startTimeBtwShots;
     [SerializeField] SpriteRenderer spr_render;
 
-
     public GameObject projectile;
     public GameObject bullet_gr;
+    public GameObject bullet_red;
+    public GameObject bullet_yell;
     public GameObject bullet_btw;
     public Transform shotPoint;
 
     Vector3 difference;
     float rotZ;
     float currentAngle;
-    // Update is called once per frame
+
+    [SerializeField] private Image Green;
+    [SerializeField] private Image Yellow;
+    [SerializeField] private Image Red;
+
+    [SerializeField] private Image Green_;
+    [SerializeField] private Image Yellow_;
+    [SerializeField] private Image Red_;
+
+    void Start()
+    {
+        //chargedbullet = false;
+    }
+
+        // Update is called once per frame
     void Update()
     {
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -69,39 +86,50 @@ public class Weapon : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            //if (green == 1)
-            //{
+            if (green == 1)
+            {
                 spr_render.sprite = greenGun;
                 projectile = bullet_gr;
-                //if (Input.GetKeyDown(KeyCode.Mouse1))
-                //{
-                //    spr_render.sprite = yellowGun;
-                //}
-                //if (Input.GetKeyDown(KeyCode.Mouse1))
-                //{
-                //    spr_render.sprite = redGun;
-                //}
-                //if (Input.GetKeyDown(KeyCode.Mouse1))
-                //{
-                //    spr_render.sprite = gun;
-                //}
-
-                //if (yellow == 1)
-                //{
-                //    spr_render.sprite = yellowGun;
-                //}
-                //if (red == 1)
-                //{
-                //    spr_render.sprite = redGun;
-                //}
-                //}
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            if (yellow == 1)
+            {
+                spr_render.sprite = yellowGun;
+                projectile = bullet_yell;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (red == 1)
+            {
+                spr_render.sprite = redGun;
+                projectile = bullet_red;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
         {
             spr_render.sprite = gun;
             projectile = bullet_btw;
+        }
+
+        if (green == 1)
+        {
+            Green_.fillAmount = 0;
+        }
+        if (yellow == 1)
+        {
+            Yellow_.fillAmount = 0;
+        }
+        if (red == 1)
+        {
+            Red_.fillAmount = 0;
         }
     }
 

@@ -10,14 +10,9 @@ public class pigero : MonoBehaviour
     public GameObject Heart;
     // Start is called before the first frame update
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         HP -= damage;
-    }
-
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -28,12 +23,6 @@ public class pigero : MonoBehaviour
             Instantiate(Heart, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-    }
-
-    public void Dmg(float _dmg)
-    {
-        HP -= _dmg;
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)

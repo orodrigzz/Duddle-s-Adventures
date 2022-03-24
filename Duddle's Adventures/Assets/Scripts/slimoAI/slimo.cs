@@ -14,7 +14,7 @@ public class slimo : MonoBehaviour
         
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         HP -= damage;
     }
@@ -30,11 +30,6 @@ public class slimo : MonoBehaviour
 
     }
 
-    public void Dmg(float _dmg)
-    {
-        HP -= _dmg;
-
-    }
     //for knockback
     private void OnCollisionEnter2D(Collision2D other)
     {

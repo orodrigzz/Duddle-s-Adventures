@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
     private int green = 0;
     private int red = 0;
     private int yellow = 0;
-    public int balas = 20;
+    //public int balas = 20;
     //private bool chargedbullet;
 
     [SerializeField] PlayerController player;
@@ -71,15 +71,15 @@ public class Weapon : MonoBehaviour
 
         if (timeBtwShots <= 0)
         {
-            if (balas >= 1)
-            {
+            //if (balas >= 1)
+            //{
                 if (Input.GetMouseButtonDown(0))
                 {
                     Instantiate(projectile, shotPoint.position, transform.rotation);
                     timeBtwShots = startTimeBtwShots;
-                    balas--;
+                    //balas--;
                 }
-            }
+            //}
         }
         else
         {

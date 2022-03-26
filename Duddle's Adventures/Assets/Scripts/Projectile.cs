@@ -21,6 +21,8 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject showtut = GameObject.Find("tutorialbox");
+        Tutorial tutscript = showtut.GetComponent<Tutorial>();
 
         for (int i = minval; i< maxval; i++)
         {
@@ -82,10 +84,20 @@ public class Projectile : MonoBehaviour
                 }
             }
             DestroyProjectile();
+
+            if (hitInfo.collider.CompareTag("Tutorialmsg"))
+            {
+                //Debug.Log("Enemy must take dmg");
+                hitInfo.collider.GetComponent<Tutorial>().ShowTutorial();
+
+                DestroyProjectile();
+
+            }
         }
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
+
 
     void DestroyProjectile()
     {

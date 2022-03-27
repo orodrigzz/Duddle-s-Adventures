@@ -41,12 +41,12 @@ public class Health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("SlimoYellow"))
         {
-            Dmg(2);
+            Dmg(3);
         }
-        /*if (collision.gameObject.CompareTag("SlimoRed"))
+        if (collision.gameObject.CompareTag("SlimoRed"))
         {
-            Dmg(2.5f);
-        }*/
+            Dmg(4);
+        }
 
 
         if (collision.gameObject.CompareTag("Pigero"))
@@ -59,11 +59,11 @@ public class Health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("PigeroYellow"))
         {
-            Dmg(1.5f);
+            Dmg(2f);
         }
         if (collision.gameObject.CompareTag("PigeroRed"))
         {
-            Dmg(2);
+            Dmg(3);
         }
 
         if (collision.gameObject.CompareTag("SpittlerProjectile"))

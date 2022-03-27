@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
 
             if (randval == 0)
             {
-                 Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                 Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
             }
 
             if (randval == 1)

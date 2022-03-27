@@ -36,6 +36,7 @@ TagManager:
   - Red_bullet
   - Yellow_bullet
   - Tutorialmsg
+  - SlimoRed
   layers:
   - Default
   - TransparentFX

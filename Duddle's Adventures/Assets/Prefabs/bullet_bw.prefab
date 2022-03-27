@@ -128,8 +128,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   SpriteHit1: {fileID: 4294715894523520259, guid: 465ab9d8fe54d494bbce0b00d76b0955, type: 3}
-  SpriteHit2: {fileID: 4294715894523520259, guid: 465ab9d8fe54d494bbce0b00d76b0955, type: 3}
-  SpriteHit3: {fileID: 4294715894523520259, guid: 465ab9d8fe54d494bbce0b00d76b0955, type: 3}
+  SpriteHit2: {fileID: 8504248677450731542, guid: 13f1428a83cd40b4abb5a6c5ed9de4dc, type: 3}
+  SpriteHit3: {fileID: 2647288236203337512, guid: 4246f012c30db6c4cb923fe29176e492, type: 3}
 --- !u!61 &-40665966765026641
 BoxCollider2D:
   m_ObjectHideFlags: 0

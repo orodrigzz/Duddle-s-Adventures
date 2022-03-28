@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8786110074697758728}
   - component: {fileID: 8786110074697758735}
   - component: {fileID: 8786110074697758729}
-  - component: {fileID: 8117305287747572095}
   - component: {fileID: 2056004221322342464}
+  - component: {fileID: -6059177404842208043}
   m_Layer: 0
   m_Name: bullet_yell
   m_TagString: Yellow_bullet
@@ -106,30 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &8117305287747572095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786110074697758734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c82a4fdf992d74dbc1f600868e332f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color1: {fileID: 0}
-  Color2: {fileID: 0}
-  speed: 1000
-  lifeTime: 5
-  distance: 0.5
-  damage: 1
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 384
-  SpriteHit1: {fileID: 7447584367825178134, guid: 620c14ab4d60e98439fa0ffd7d09aabb, type: 3}
-  SpriteHit2: {fileID: 4226641375166637867, guid: cbcb5d9dc1a34b444b08e2d0a7d9910b, type: 3}
-  SpriteHit3: {fileID: 1290523490331772836, guid: cf081587cec14874d896e451dff1fc97, type: 3}
 --- !u!61 &2056004221322342464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,3 +132,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 39, y: 11}
   m_EdgeRadius: 0
+--- !u!114 &-6059177404842208043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786110074697758734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fecde9316b8d7140b872a0e04b863c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
+  lifeTime: 5
+  distance: 0.5
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 384
+  SpriteHit1: {fileID: 7447584367825178134, guid: 620c14ab4d60e98439fa0ffd7d09aabb, type: 3}
+  SpriteHit2: {fileID: 4226641375166637867, guid: cbcb5d9dc1a34b444b08e2d0a7d9910b, type: 3}
+  SpriteHit3: {fileID: 1290523490331772836, guid: cf081587cec14874d896e451dff1fc97, type: 3}

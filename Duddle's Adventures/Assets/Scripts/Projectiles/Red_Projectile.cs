@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Red_Projectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
     public float distance;
+    private float bwdamage = 1.75f;
     private float damage = 1;
     private float othdamage = 0.5f;
     int minval = 0;
@@ -23,7 +24,7 @@ public class Projectile : MonoBehaviour
         GameObject showtut = GameObject.Find("tutorialbox");
         Tutorial tutscript = showtut.GetComponent<Tutorial>();
 
-        for (int i = minval; i< maxval; i++)
+        for (int i = minval; i < maxval; i++)
         {
             randval = Random.Range(0, 2);
         }
@@ -35,14 +36,14 @@ public class Projectile : MonoBehaviour
     void Update()
     {
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance,whatIsSolid);
-        if(hitInfo.collider != null)
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance, whatIsSolid);
+        if (hitInfo.collider != null)
         {
             // Daño a blancos
 
             if (hitInfo.collider.CompareTag("Slimos"))
             {
-                hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<slimo>().TakeDamage(bwdamage);
                 DestroyProjectile();
 
                 if (randval == 0)
@@ -62,6 +63,48 @@ public class Projectile : MonoBehaviour
             DestroyProjectile();
 
             if (hitInfo.collider.CompareTag("Pigero"))
+            {
+                hitInfo.collider.GetComponent<pigero>().TakeDamage(bwdamage);
+                DestroyProjectile();
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+            }
+            DestroyProjectile();
+
+            // Daño a rojos
+
+            if (hitInfo.collider.CompareTag("SlimoRed"))
+            {
+                hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
+                DestroyProjectile();
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+            }
+            DestroyProjectile();
+
+            if (hitInfo.collider.CompareTag("PigeroRed"))
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);
                 DestroyProjectile();
@@ -83,7 +126,7 @@ public class Projectile : MonoBehaviour
 
             // Daño a otros colores
 
-            if (hitInfo.collider.CompareTag("SlimoGreen") || hitInfo.collider.CompareTag("SlimoYellow") || hitInfo.collider.CompareTag("SlimoRed"))
+            if (hitInfo.collider.CompareTag("SlimoYellow") || hitInfo.collider.CompareTag("SlimoGreen"))
             {
                 hitInfo.collider.GetComponent<slimo>().TakeDamage(othdamage);
                 DestroyProjectile();
@@ -103,7 +146,7 @@ public class Projectile : MonoBehaviour
             }
             DestroyProjectile();
 
-            if (hitInfo.collider.CompareTag("PigeroGreen") || hitInfo.collider.CompareTag("PigeroRed") || hitInfo.collider.CompareTag("PigeroYellow"))
+            if (hitInfo.collider.CompareTag("PigeroGreen") || hitInfo.collider.CompareTag("PigeroYellow"))
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(othdamage);
                 DestroyProjectile();
@@ -122,6 +165,7 @@ public class Projectile : MonoBehaviour
                 }
             }
             DestroyProjectile();
+
 
             if (hitInfo.collider.CompareTag("Tutorialmsg"))
             {

@@ -8,11 +8,6 @@ public class slimo : MonoBehaviour
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
     public GameObject Heart;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void TakeDamage(float damage)
     {
@@ -24,7 +19,7 @@ public class slimo : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Instantiate(Heart, transform.position, transform.rotation);
+            //Instantiate(Heart, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 

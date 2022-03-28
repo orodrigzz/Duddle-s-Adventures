@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public GameObject Color1;
-    public GameObject Color2;
     public float speed;
     public float lifeTime;
     public float distance;
-    public int damage;
+    private float damage = 1;
+    private float othdamage = 0.5f;
     int minval = 0;
     int maxval = 2;
     int randval;
@@ -39,35 +38,74 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance,whatIsSolid);
         if(hitInfo.collider != null)
         {
-            if (hitInfo.collider.CompareTag("Slimos") || hitInfo.collider.CompareTag("SlimoGreen"))
+            // Daño a blancos
+
+            if (hitInfo.collider.CompareTag("Slimos"))
             {
-                //Debug.Log("Enemy must take dmg");
-                hitInfo.collider.GetComponent<slimo>() .TakeDamage(damage);
+                hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
                 DestroyProjectile();
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+
             }
             DestroyProjectile();
 
-            if (randval == 0)
+            if (hitInfo.collider.CompareTag("Pigero"))
             {
-                 Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
-            }
-
-            if (randval == 1)
-            {
-
-                Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
-            }
-
-            if (randval == 2)
-            {
-                Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
-            }
- 
-
-            if (hitInfo.collider.CompareTag("Pigero") || hitInfo.collider.CompareTag("PigeroGreen"))
-            {
-                //Debug.Log("Enemy must take dmg");
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);
+                DestroyProjectile();
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+            }
+            DestroyProjectile();
+
+            // Daño a otros colores
+
+            if (hitInfo.collider.CompareTag("SlimoGreen") || hitInfo.collider.CompareTag("SlimoYellow") || hitInfo.collider.CompareTag("SlimoRed"))
+            {
+                hitInfo.collider.GetComponent<slimo>().TakeDamage(othdamage);
+                DestroyProjectile();
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                }
+            }
+            DestroyProjectile();
+
+            if (hitInfo.collider.CompareTag("PigeroGreen") || hitInfo.collider.CompareTag("PigeroRed") || hitInfo.collider.CompareTag("PigeroYellow"))
+            {
+                hitInfo.collider.GetComponent<pigero>().TakeDamage(othdamage);
                 DestroyProjectile();
 
                 if (randval == 0)
@@ -87,7 +125,6 @@ public class Projectile : MonoBehaviour
 
             if (hitInfo.collider.CompareTag("Tutorialmsg"))
             {
-                //Debug.Log("Enemy must take dmg");
                 hitInfo.collider.GetComponent<Tutorial>().ShowTutorial();
 
                 DestroyProjectile();

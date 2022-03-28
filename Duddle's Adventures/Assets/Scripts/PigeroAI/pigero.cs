@@ -20,7 +20,7 @@ public class pigero : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Instantiate(Heart, transform.position, transform.rotation);
+            //Instantiate(Heart, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -150,6 +150,6 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 384
-  SpriteHit1: {fileID: 8226049671800848363, guid: 0e5181df8c9aa9a4aa479e6522056ea6, type: 3}
+  SpriteHit1: {fileID: 9087372949676483396, guid: b623df41b144caf4eb40374c66132ce4, type: 3}
   SpriteHit2: {fileID: 3116087966722965347, guid: 3dd5c60411915b44f96b59dbe5f9975e, type: 3}
   SpriteHit3: {fileID: 220251219957483340, guid: 26903ee54a791c8438c778b528aa21ed, type: 3}

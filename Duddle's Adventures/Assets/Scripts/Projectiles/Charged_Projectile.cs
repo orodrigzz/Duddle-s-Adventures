@@ -36,6 +36,19 @@ public class Charged_Projectile : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance, whatIsSolid);
         if (hitInfo.collider != null)
         {
+
+            if (randval == 0)
+            {
+                Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+            }
+            if (randval == 1)
+            {
+                Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+            }
+            if (randval == 2)
+            {
+                Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+            }
             // Daño a Slimos
 
             if (hitInfo.collider.CompareTag("Slimos") || hitInfo.collider.CompareTag("SlimoGreen") || hitInfo.collider.CompareTag("SlimoYellow") || hitInfo.collider.CompareTag("SlimoRed"))

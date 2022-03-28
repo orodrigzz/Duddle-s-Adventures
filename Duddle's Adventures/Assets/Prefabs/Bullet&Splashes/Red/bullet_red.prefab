@@ -127,9 +127,9 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 384
-  SpriteHit1: {fileID: 2647288236203337512, guid: 4246f012c30db6c4cb923fe29176e492, type: 3}
-  SpriteHit2: {fileID: 8504248677450731542, guid: 13f1428a83cd40b4abb5a6c5ed9de4dc, type: 3}
-  SpriteHit3: {fileID: 7258931055028161780, guid: 049bcd46ce361d1419da9ca08186fd12, type: 3}
+  SpriteHit1: {fileID: 4647939960055059321, guid: a9868dd83108aa844a9a8891a6feea88, type: 3}
+  SpriteHit2: {fileID: 5956877674461495962, guid: 33da39f0e14f5db4191a4807d5f25a1b, type: 3}
+  SpriteHit3: {fileID: 8752981266731793752, guid: 5ba1e1aa2d573774bace39e2320f0517, type: 3}
 --- !u!61 &1575401429555456909
 BoxCollider2D:
   m_ObjectHideFlags: 0

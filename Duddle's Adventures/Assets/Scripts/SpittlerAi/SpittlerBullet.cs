@@ -6,12 +6,17 @@ public class SpittlerBullet : MonoBehaviour
 {
     public float damage;
     public float speed;
+    public bool changeDirection;
     Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = transform.right * speed;
+        if(changeDirection == true)
+        {
+            rb2d.velocity = transform.right * -speed;
+        }
     }
 
     // Update is called once per frame

@@ -26,11 +26,12 @@ public class PlayerController : MonoBehaviour
     private bool wasJumping;
     private bool jumpPerformed;
     private bool canWallJump;
-    private bool doublejump;
+    private int jumps;
     private Direction jumpDir;
 
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
+
     //for knockback
     public static PlayerController instance;
 
@@ -39,7 +40,6 @@ public class PlayerController : MonoBehaviour
         spr_render.flipX = v;
     }
 
-    //for knockback
     private void Awake()
     {
         instance = this;
@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
         wasJumping = false;
         jumpPerformed = true;
         canWallJump = false;
-        doublejump = false;
 
         moveDir = Direction.NONE;
     }
@@ -91,14 +90,7 @@ public class PlayerController : MonoBehaviour
                 isJumping = true;
             }
         }
-        if (doublejump == true){
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                jumpPerformed = false;
-                isJumping = true;
-            }
-        }
-
+        
         anim.SetBool(runningID, isRunning);
         if (wasJumping != isJumping)
         {
@@ -211,15 +203,6 @@ public class PlayerController : MonoBehaviour
                     canWallJump = false;
                 }
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "DoubleJump")
-        {
-            Destroy(collision.gameObject);
-            doublejump = true;
         }
     }
 

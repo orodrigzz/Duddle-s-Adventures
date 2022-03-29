@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     private int red = 0;
     private int yellow = 0;
     //public int balas = 20;
-    //private bool chargedbullet;
+    private int chargedbullet;
 
     [SerializeField] PlayerController player;
 
@@ -29,6 +29,10 @@ public class Weapon : MonoBehaviour
     public GameObject bullet_red;
     public GameObject bullet_yell;
     public GameObject bullet_btw;
+    public GameObject BW_chargedBull;
+    public GameObject Y_chargedBull;
+    public GameObject G_chargedBull;
+    public GameObject R_chargedBull;
     public Transform shotPoint;
 
     Vector3 difference;
@@ -45,7 +49,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        //chargedbullet = false;
+        chargedbullet = 0;
     }
 
         // Update is called once per frame
@@ -153,7 +157,7 @@ public class Weapon : MonoBehaviour
         //if (collision.tag == "ChargedBullet")
         //{
         //    Destroy(collision.gameObject);
-        //    chargedbullet = true;
+        //    chargedbullet++;
         //}
     }
 }

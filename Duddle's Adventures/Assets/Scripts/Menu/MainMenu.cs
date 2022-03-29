@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Level1");
     }
 
     public void BackToMenu ()
@@ -17,18 +17,17 @@ public class MainMenu : MonoBehaviour
 
     public void ToSettings()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Settings");
     }
 
     public void QuitGame()
     {
-       //Debug.Log("QUIT!");
         Application.Quit();
     }
 
     public void ToCredits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene("Credits");
     }
     public void BackToMenuFromCredits()
     {

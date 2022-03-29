@@ -52,6 +52,15 @@ public class BW_Projectile : MonoBehaviour
                 Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
             }
 
+            //Daño a King Slimo
+
+            if (hitInfo.collider.CompareTag("KingSlimo"))
+            {
+                hitInfo.collider.GetComponent<KingSlimo>().TakeDamage(othdamage);
+                DestroyProjectile();
+            }
+            DestroyProjectile();
+
             // Daño a blancos
 
             if (hitInfo.collider.CompareTag("Slimos"))

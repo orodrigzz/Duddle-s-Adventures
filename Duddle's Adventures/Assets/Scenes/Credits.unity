@@ -986,8 +986,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\nAdri\xE0 Pa\xFCls\nOscar Rodrigez\n\n\nMarc Planas\nAdri\xE0 Pa\xFCls\n\n\nMarc
-    Planas\n\n\nAdri\xE0 Pa\xFCls"
+  m_Text: "\n\n\nAdri\xE0 Pa\xFCls\nOscar Rodr\xEDguez\n\n\nMarc Planas\nAdri\xE0
+    Pa\xFCls\n\n\nMarc Planas\n\n\nAdri\xE0 Pa\xFCls"
 --- !u!222 &2125129082
 CanvasRenderer:
   m_ObjectHideFlags: 0

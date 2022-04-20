@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BW_Projectile : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class BW_Projectile : MonoBehaviour
     public GameObject SpriteHit1;
     public GameObject SpriteHit2;
     public GameObject SpriteHit3;
+    public GameObject dmgtxt;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,11 @@ public class BW_Projectile : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<KingSlimo>().TakeDamage(othdamage);
                 DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(othdamage.ToString());
+
+                DestroyProjectile();
             }
             DestroyProjectile();
 
@@ -67,6 +74,9 @@ public class BW_Projectile : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
                 DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(damage.ToString());
 
                 if (randval == 0)
                 {
@@ -88,6 +98,9 @@ public class BW_Projectile : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);
                 DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(damage.ToString());
 
                 if (randval == 0)
                 {
@@ -111,6 +124,10 @@ public class BW_Projectile : MonoBehaviour
                 hitInfo.collider.GetComponent<slimo>().TakeDamage(othdamage);
                 DestroyProjectile();
 
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(othdamage.ToString());
+
+
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
@@ -130,6 +147,10 @@ public class BW_Projectile : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(othdamage);
                 DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(othdamage.ToString());
+
 
                 if (randval == 0)
                 {

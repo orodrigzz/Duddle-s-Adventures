@@ -153,3 +153,4 @@ MonoBehaviour:
   SpriteHit1: {fileID: 5947971022504189085, guid: dadde3ce35ff15142bf0a379c98bc16b, type: 3}
   SpriteHit2: {fileID: 4226641375166637867, guid: cbcb5d9dc1a34b444b08e2d0a7d9910b, type: 3}
   SpriteHit3: {fileID: 1290523490331772836, guid: cf081587cec14874d896e451dff1fc97, type: 3}
+  dmgtxt: {fileID: 913571056986214333, guid: b44994f7479439d4a8d5fb8af9195708, type: 3}

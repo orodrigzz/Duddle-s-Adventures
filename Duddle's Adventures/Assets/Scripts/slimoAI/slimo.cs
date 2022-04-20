@@ -12,6 +12,7 @@ public class slimo : MonoBehaviour
     public void TakeDamage(float damage)
     {
         HP -= damage;
+        
     }
 
     // Update is called once per frame

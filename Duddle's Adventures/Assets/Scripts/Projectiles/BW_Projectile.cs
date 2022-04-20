@@ -19,11 +19,14 @@ public class BW_Projectile : MonoBehaviour
     public GameObject SpriteHit3;
     public GameObject dmgtxt;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         GameObject showtut = GameObject.Find("tutorialbox");
         Tutorial tutscript = showtut.GetComponent<Tutorial>();
+        //GameObject shake = GameObject.FindObjectOfType(typeof(ShakeBehavior)) as ScriptA;
 
         for (int i = minval; i< maxval; i++)
         {
@@ -76,6 +79,7 @@ public class BW_Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("Slimos"))
             {
                 hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
+
                 DestroyProjectile();
 
                 GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);

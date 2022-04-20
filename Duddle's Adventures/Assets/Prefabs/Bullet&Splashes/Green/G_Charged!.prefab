@@ -127,6 +127,7 @@ MonoBehaviour:
   SpriteHit1: {fileID: 2647288236203337512, guid: 4246f012c30db6c4cb923fe29176e492, type: 3}
   SpriteHit2: {fileID: 8504248677450731542, guid: 13f1428a83cd40b4abb5a6c5ed9de4dc, type: 3}
   SpriteHit3: {fileID: 7258931055028161780, guid: 049bcd46ce361d1419da9ca08186fd12, type: 3}
+  dmgtxt: {fileID: 3124455403166548708, guid: 3dfae9795e6940849bfb2e611b43ea45, type: 3}
 --- !u!61 &3138342497540193881
 BoxCollider2D:
   m_ObjectHideFlags: 0

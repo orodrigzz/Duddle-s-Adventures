@@ -154,11 +154,11 @@ public class Weapon : MonoBehaviour
             Destroy(collision.gameObject);
             red++;
         }
-        //if (collision.tag == "ChargedBullet")
-        //{
-        //    Destroy(collision.gameObject);
-        //    chargedbullet++;
-        //}
+        if (collision.tag == "ChargedBullet")
+        {
+            Destroy(collision.gameObject);
+            chargedbullet++;
+        }
     }
 }
 

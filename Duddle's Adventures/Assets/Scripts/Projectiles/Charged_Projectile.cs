@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Charged_Projectile : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Charged_Projectile : MonoBehaviour
     public GameObject SpriteHit1;
     public GameObject SpriteHit2;
     public GameObject SpriteHit3;
+    public GameObject dmgtxt;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,12 @@ public class Charged_Projectile : MonoBehaviour
                 hitInfo.collider.GetComponent<slimo>().TakeDamage(damage);
                 DestroyProjectile();
 
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(damage.ToString());
+
+                StartCoroutine(MoveText(txtDMG));
+                Destroy(txtDMG.gameObject, 1f);
+
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
@@ -77,6 +85,12 @@ public class Charged_Projectile : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);
                 DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(damage.ToString());
+
+                StartCoroutine(MoveText(txtDMG));
+                Destroy(txtDMG.gameObject, 1f);
 
                 if (randval == 0)
                 {
@@ -108,5 +122,18 @@ public class Charged_Projectile : MonoBehaviour
     void DestroyProjectile()
     {
         Destroy(gameObject);
+    }
+    IEnumerator MoveText(GameObject go)
+    {
+        Vector2 initial = new Vector2(go.transform.position.x, go.transform.position.y + 50);
+        Vector2 final = new Vector2(go.transform.position.x, go.transform.position.y + 100);
+        int uptTimes = 0;
+        while (uptTimes < 6)
+        {
+            uptTimes++;
+            go.transform.position = Vector2.MoveTowards(initial, final, 15f * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
     }
 }

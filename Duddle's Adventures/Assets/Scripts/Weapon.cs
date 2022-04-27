@@ -44,8 +44,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
     [SerializeField] private Image Red_;
+    [SerializeField] private Image Charged;
 
-        // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -82,14 +83,17 @@ public class Weapon : MonoBehaviour
                 if (chargedbullet == true)
                 {
                     spr_render.sprite = blackGun;
+                    Charged.fillAmount = 1;
 
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(1))
                     {
                         Instantiate(ChargedBull, shotPoint.position, transform.rotation);
                         timeBtwShots = startTimeBtwShots;
                         chargedbullet = false;
+                        Charged.fillAmount = 0;
                         spr_render.sprite = gun;
-                }
+
+                    }
                 }
         }
         else

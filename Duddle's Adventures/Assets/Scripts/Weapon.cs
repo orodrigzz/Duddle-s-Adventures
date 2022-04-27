@@ -9,12 +9,13 @@ public class Weapon : MonoBehaviour
     public Sprite yellowGun;
     public Sprite redGun;
     public Sprite gun;
+    public Sprite blackGun;
 
     private int green = 0;
     private int red = 0;
     private int yellow = 0;
     //public int balas = 20;
-    private int chargedbullet;
+    private bool chargedbullet = false;
 
     [SerializeField] PlayerController player;
 
@@ -29,10 +30,7 @@ public class Weapon : MonoBehaviour
     public GameObject bullet_red;
     public GameObject bullet_yell;
     public GameObject bullet_btw;
-    public GameObject BW_chargedBull;
-    public GameObject Y_chargedBull;
-    public GameObject G_chargedBull;
-    public GameObject R_chargedBull;
+    public GameObject ChargedBull;
 
     public Transform shotPoint;
 
@@ -46,11 +44,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
     [SerializeField] private Image Red_;
-
-    void Start()
-    {
-        chargedbullet = 0;
-    }
 
         // Update is called once per frame
     void Update()
@@ -83,7 +76,21 @@ public class Weapon : MonoBehaviour
                     timeBtwShots = startTimeBtwShots;
                     //balas--;
                 }
-            //}
+
+            //Charged Bullet PW UP 
+
+                if (chargedbullet == true)
+                {
+                    spr_render.sprite = blackGun;
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(ChargedBull, shotPoint.position, transform.rotation);
+                        timeBtwShots = startTimeBtwShots;
+                        chargedbullet = false;
+                        spr_render.sprite = gun;
+                }
+                }
         }
         else
         {
@@ -205,7 +212,7 @@ public class Weapon : MonoBehaviour
         if (collision.tag == "ChargedBullet")
         {
             Destroy(collision.gameObject);
-            chargedbullet++;
+            chargedbullet = true;
         }
     }
 }

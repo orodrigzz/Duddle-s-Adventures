@@ -33,12 +33,16 @@ public class Weapon : MonoBehaviour
     public GameObject Y_chargedBull;
     public GameObject G_chargedBull;
     public GameObject R_chargedBull;
+
     public Transform shotPoint;
 
     Vector3 difference;
     float rotZ;
     float currentAngle;
 
+    [SerializeField] private Image E_;
+    [SerializeField] private Image R_;
+    [SerializeField] private Image T_;
     [SerializeField] private Image Green;
     [SerializeField] private Image Yellow;
     [SerializeField] private Image Red;
@@ -90,6 +94,49 @@ public class Weapon : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
+        //Cambio colores 
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) 
+        {
+            if (green == 1)
+            {
+                spr_render.sprite = greenGun;
+                projectile = bullet_gr;
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+            {
+                    spr_render.sprite = gun;
+                    projectile = bullet_btw;
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            {
+                if (yellow == 1)
+                {
+                    spr_render.sprite = yellowGun;
+                    projectile = bullet_yell;
+                }
+                if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+                {
+                    spr_render.sprite = gun;
+                    projectile = bullet_btw;
+                }
+
+                if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+                {
+                if (red == 1)
+                {
+                    spr_render.sprite = redGun;
+                    projectile = bullet_red;
+                }
+                if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+                    {
+                    spr_render.sprite = gun;
+                    projectile = bullet_btw;
+                }
+                }
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (green == 1)
@@ -123,16 +170,21 @@ public class Weapon : MonoBehaviour
             projectile = bullet_btw;
         }
 
+        // Cambio colores UI
+
         if (green == 1)
         {
+            E_.fillAmount = 0;
             Green_.fillAmount = 0;
         }
         if (yellow == 1)
         {
+            R_.fillAmount = 0;
             Yellow_.fillAmount = 0;
         }
         if (red == 1)
         {
+            T_.fillAmount = 0;
             Red_.fillAmount = 0;
         }
     }

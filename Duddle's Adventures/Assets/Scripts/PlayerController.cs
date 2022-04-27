@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     private bool wasJumping;
     private bool jumpPerformed;
     private bool canWallJump;
-    private int jumps;
     private Direction jumpDir;
+    private float doublejump;
 
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
@@ -88,6 +88,15 @@ public class PlayerController : MonoBehaviour
             {
                 jumpPerformed = false;
                 isJumping = true;
+
+                if (doublejump == 1)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        jumpPerformed = false;
+                        isJumping = true;
+                    }
+                }
             }
         }
         
@@ -219,6 +228,15 @@ public class PlayerController : MonoBehaviour
         }
 
         yield return 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "DoubleJump")
+        {
+            Destroy(collision.gameObject);
+            doublejump++;
+        }
     }
 
 }

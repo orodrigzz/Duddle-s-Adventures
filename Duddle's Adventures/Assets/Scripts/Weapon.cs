@@ -43,10 +43,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Image E_;
     [SerializeField] private Image R_;
     [SerializeField] private Image T_;
-    [SerializeField] private Image Green;
-    [SerializeField] private Image Yellow;
-    [SerializeField] private Image Red;
-
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
     [SerializeField] private Image Red_;

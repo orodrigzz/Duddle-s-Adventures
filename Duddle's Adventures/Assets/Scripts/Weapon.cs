@@ -76,7 +76,7 @@ public class Weapon : MonoBehaviour
             //{
                 if (Input.GetMouseButtonDown(0))
                 {
-                    AudioSource.PlayClipAtPoint(ShootingClip,transform.position);
+                    //AudioSource.PlayClipAtPoint(ShootingClip,transform.position);
                     Instantiate(projectile, shotPoint.position, transform.rotation);
                     timeBtwShots = startTimeBtwShots;
                     //balas--;

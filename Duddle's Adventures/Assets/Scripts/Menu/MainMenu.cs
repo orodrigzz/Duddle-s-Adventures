@@ -33,4 +33,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void ToLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+    public void ToLevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 }

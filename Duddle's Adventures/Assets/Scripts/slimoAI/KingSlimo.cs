@@ -21,7 +21,7 @@ public class KingSlimo : MonoBehaviour
         if (HP <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Level2");
         }
 
     }

@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
 
+    public AudioSource Source;
+    public AudioClip ShootingClip;
+
     //for knockback
     public static PlayerController instance;
 

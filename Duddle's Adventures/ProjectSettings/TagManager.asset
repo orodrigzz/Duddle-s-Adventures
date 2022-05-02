@@ -42,7 +42,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PlayerLayer
   - Water
   - UI
   - Ground
@@ -95,4 +95,7 @@ TagManager:
     locked: 0
   - name: PauseMenu
     uniqueID: 3063721637
+    locked: 0
+  - name: Snow
+    uniqueID: 1117871507
     locked: 0

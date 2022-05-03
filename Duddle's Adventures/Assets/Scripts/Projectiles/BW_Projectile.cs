@@ -60,23 +60,6 @@ public class BW_Projectile : MonoBehaviour
             }
 
 
-            //Daño a Thundorf
-
-            if (hitInfo.collider.CompareTag("Thundorf"))
-            {
-                hitInfo.collider.GetComponent<Thundorf>().TakeDamage(othdamage);
-                DestroyProjectile();
-
-                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
-                txtDMG.GetComponent<TextMeshPro>().SetText(othdamage.ToString());
-
-                StartCoroutine(MoveText(txtDMG));
-                Destroy(txtDMG.gameObject, 1f);
-
-                DestroyProjectile();
-            }
-            DestroyProjectile();
-
             // Daño a blancos
 
             if (hitInfo.collider.CompareTag("Slimos"))

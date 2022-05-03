@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
 
-
+    public AudioSource GameOver;
     [SerializeField] private float startHealth;
     public float currHealth;
     private Vector3 respawnpoint;
@@ -22,7 +22,6 @@ public class Health : MonoBehaviour
     public void Dmg(float _dmg)
     {
         currHealth -= _dmg;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,6 +30,7 @@ public class Health : MonoBehaviour
         {
             Dmg(1);
             transform.position = respawnpoint;
+            GameOver.Play();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -47,9 +47,8 @@ public class Health : MonoBehaviour
     {
         if(currHealth <= 0)
         {
-            transform.position = respawnpoint;
-            currHealth = startHealth;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameOver.Play();
+            SceneManager.LoadScene("Credits");
         }
 
     }

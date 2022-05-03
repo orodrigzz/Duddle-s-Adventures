@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spittler : MonoBehaviour
 {
 
+    public AudioSource splitter;
     public Transform firepoint;
     public GameObject bullet;
     float timebetween;
@@ -21,6 +22,7 @@ public class Spittler : MonoBehaviour
         if(timebetween <= 0)
         {
             Instantiate(bullet, firepoint.position, firepoint.rotation);
+            splitter.Play();
             timebetween = starttimebetween;
         }
         else

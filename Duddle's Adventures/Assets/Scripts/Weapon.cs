@@ -11,8 +11,7 @@ public class Weapon : MonoBehaviour
     public Sprite gun;
     public Sprite blackGun;
 
-    public AudioSource Source;
-    public AudioClip ShootingClip;
+    public AudioSource Shoot;
 
     private int green = 0;
     private int red = 0;
@@ -76,7 +75,7 @@ public class Weapon : MonoBehaviour
             //{
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //AudioSource.PlayClipAtPoint(ShootingClip,transform.position);
+                    Shoot.Play();
                     Instantiate(projectile, shotPoint.position, transform.rotation);
                     timeBtwShots = startTimeBtwShots;
                     //balas--;

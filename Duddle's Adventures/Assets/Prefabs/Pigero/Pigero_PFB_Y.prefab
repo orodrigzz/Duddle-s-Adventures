@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackPower: 200
   knockbackDuration: 3
-  HP: 3
-  Heart: {fileID: 5072693974341557240, guid: ab21d781c064bf64fb6679cc29ba2dcc, type: 3}
+  HP: 2
+  "da\xF1o": {fileID: 0}
 --- !u!61 &8949063196108475589
 BoxCollider2D:
   m_ObjectHideFlags: 0

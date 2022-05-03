@@ -25,14 +25,30 @@ public class Health : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Floor")
+        {
+            Dmg(1);
+            transform.position = respawnpoint;
+        }
+        else if (collision.tag == "Checkpoint")
+        {
+            respawnpoint = transform.position;
+        }
+    }
+
     private void Update()
     {
         if(currHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            transform.position = respawnpoint;
+            currHealth = startHealth;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Slimos"))
@@ -76,19 +92,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Floor")
-        {
-            Dmg(1);
-            transform.position = respawnpoint;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        else if (collision.tag == "Checkpoint")
-        {
-            respawnpoint = transform.position;
-        }
-    }
+
 
     public void AddHealth(float _value)
     {

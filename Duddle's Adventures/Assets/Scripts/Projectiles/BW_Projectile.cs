@@ -91,6 +91,38 @@ public class BW_Projectile : MonoBehaviour
             }
             DestroyProjectile();
 
+            //daño Thundorf
+            if (hitInfo.collider.CompareTag("Thundorf"))
+            {
+                hitInfo.collider.GetComponent<Thundorf>().TakeDamage(othdamage);
+
+                DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(othdamage.ToString());
+
+                StartCoroutine(MoveText(txtDMG));
+                Destroy(txtDMG.gameObject, 1f);
+
+                if (randval == 0)
+                {
+                    Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
+                }
+                if (randval == 1)
+                {
+                    Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
+                }
+                if (randval == 2)
+                {
+                    Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
+                }
+
+            }
+            DestroyProjectile();
+
             if (hitInfo.collider.CompareTag("Pigero"))
             {
                 hitInfo.collider.GetComponent<pigero>().TakeDamage(damage);

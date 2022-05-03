@@ -41,4 +41,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelect");
     }
+    public void ToBossLVL2()
+    {
+        SceneManager.LoadScene("BossLVL2");
+    }
 }

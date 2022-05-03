@@ -8,7 +8,7 @@ public class KingSlimo : MonoBehaviour
     public float HP = 10;
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
-    public GameObject Heart;
+    public AudioSource Victory;
 
     public void TakeDamage(float damage)
     {
@@ -20,6 +20,7 @@ public class KingSlimo : MonoBehaviour
     {
         if (HP <= 0)
         {
+            Victory.Play();
             Destroy(gameObject);
             SceneManager.LoadScene("Level2");
         }

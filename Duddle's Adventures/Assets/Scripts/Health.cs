@@ -36,6 +36,11 @@ public class Health : MonoBehaviour
         {
             respawnpoint = transform.position;
         }
+
+        if (collision.gameObject.CompareTag("Rayo"))
+        {
+            Dmg(0.5f);
+        }
     }
 
     private void Update()
@@ -90,6 +95,7 @@ public class Health : MonoBehaviour
         {
             Dmg(1f);
         }
+
     }
 
 

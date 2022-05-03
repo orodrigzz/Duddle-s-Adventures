@@ -39,6 +39,8 @@ TagManager:
   - SlimoRed
   - KingSlimo
   - Checkpoint
+  - Thundorf
+  - Rayo
   layers:
   - Default
   - TransparentFX

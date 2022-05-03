@@ -70,6 +70,21 @@ public class Green_Projectile : MonoBehaviour
             }
             DestroyProjectile();
 
+            //Daño a Thundorf
+
+            if (hitInfo.collider.CompareTag("Thundorf"))
+            {
+                hitInfo.collider.GetComponent<Thundorf>().TakeDamage(othdamage);
+                DestroyProjectile();
+
+                GameObject txtDMG = Instantiate(dmgtxt, transform.position, Quaternion.identity);
+                txtDMG.GetComponent<TextMeshPro>().SetText(damage.ToString());
+
+                StartCoroutine(MoveText(txtDMG));
+                Destroy(txtDMG.gameObject, 0.5f);
+            }
+            DestroyProjectile();
+
             // Daño a blancos
 
             if (hitInfo.collider.CompareTag("Slimos"))
@@ -232,6 +247,7 @@ public class Green_Projectile : MonoBehaviour
                 }
             }
             DestroyProjectile();
+
 
 
             if (hitInfo.collider.CompareTag("Tutorialmsg"))

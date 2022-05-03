@@ -25,7 +25,6 @@ public class BW_Projectile : MonoBehaviour
     {
         GameObject showtut = GameObject.Find("tutorialbox");
         Tutorial tutscript = showtut.GetComponent<Tutorial>();
-        //GameObject shake = GameObject.FindObjectOfType(typeof(ShakeBehavior)) as ScriptA;
 
         for (int i = minval; i< maxval; i++)
         {
@@ -38,7 +37,6 @@ public class BW_Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, distance,whatIsSolid);
         if(hitInfo.collider != null)
         {

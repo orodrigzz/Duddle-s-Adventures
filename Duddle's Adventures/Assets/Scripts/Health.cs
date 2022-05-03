@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Rayo"))
         {
-            Dmg(0.5f);
+            Dmg(1);
         }
     }
 
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         if(currHealth <= 0)
         {
             GameOver.Play();
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu");
         }
 
     }
@@ -65,11 +65,11 @@ public class Health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("SlimoYellow"))
         {
-            Dmg(3);
+            Dmg(2);
         }
         if (collision.gameObject.CompareTag("SlimoRed"))
         {
-            Dmg(4);
+            Dmg(3);
         }
 
 

@@ -16089,7 +16089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 7717482687982838253}
-  ForwardMove: 350
+  ForwardMove: 0
   Smoothing: 4
 --- !u!20 &377028137
 Camera:

@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 4;
     public float jumpSpeed = 300;
 
-    public AudioSource Source;
-    public AudioClip ShootingClip;
+    public AudioSource Jump;
+    public AudioSource music;
 
     //for knockback
     public static PlayerController instance;
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         canWallJump = false;
 
         moveDir = Direction.NONE;
+        music.Play();
     }
 
     // Update is called once per frame
@@ -91,15 +92,7 @@ public class PlayerController : MonoBehaviour
             {
                 jumpPerformed = false;
                 isJumping = true;
-
-                if (doublejump == 1)
-                {
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        jumpPerformed = false;
-                        isJumping = true;
-                    }
-                }
+                Jump.Play();
             }
         }
         

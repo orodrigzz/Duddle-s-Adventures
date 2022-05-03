@@ -7,11 +7,13 @@ public class pigero : MonoBehaviour
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
     public float HP = 3;
-    public GameObject Heart;
+    public AudioSource daño;
+
     // Start is called before the first frame update
 
     public void TakeDamage(float damage)
     {
+        daño.Play();
         HP -= damage;
     }
 
@@ -20,7 +22,7 @@ public class pigero : MonoBehaviour
     {
         if (HP <= 0)
         {
-            //Instantiate(Heart, transform.position, transform.rotation);
+            daño.Play();
             Destroy(gameObject);
         }
     }

@@ -19,6 +19,7 @@ public class Red_Projectile : MonoBehaviour
     public GameObject SpriteHit2;
     public GameObject SpriteHit3;
     public GameObject dmgtxt;
+    public AudioSource Splash;
 
     // Start is called before the first frame update
     void Start()
@@ -44,14 +45,17 @@ public class Red_Projectile : MonoBehaviour
             if (randval == 0)
             {
                 Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                Splash.Play();
             }
             if (randval == 1)
             {
                 Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                Splash.Play();
             }
             if (randval == 2)
             {
                 Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                Splash.Play();
             }
 
             // Daño a blancos
@@ -70,14 +74,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
 
             }
@@ -97,14 +104,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
             }
             DestroyProjectile();
@@ -125,14 +135,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
             }
             DestroyProjectile();
@@ -151,14 +164,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
             }
             DestroyProjectile();
@@ -179,14 +195,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
             }
             DestroyProjectile();
@@ -205,14 +224,17 @@ public class Red_Projectile : MonoBehaviour
                 if (randval == 0)
                 {
                     Instantiate(SpriteHit1, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 1)
                 {
                     Instantiate(SpriteHit2, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
                 if (randval == 2)
                 {
                     Instantiate(SpriteHit3, transform.position, new Quaternion(0, 0, 0, 0));
+                    Splash.Play();
                 }
             }
             DestroyProjectile();

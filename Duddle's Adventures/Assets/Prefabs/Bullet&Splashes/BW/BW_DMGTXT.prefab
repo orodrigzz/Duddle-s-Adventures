@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542760568702866656}
-  - component: {fileID: 8475470470480506829}
   - component: {fileID: 4292847474359166222}
   - component: {fileID: 1358883646595686187}
   m_Layer: 5
@@ -38,14 +37,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2033, y: 646}
   m_SizeDelta: {x: 136.0311, y: 143.2187}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8475470470480506829
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3309572167689252247}
-  m_CullTransparentMesh: 1
 --- !u!23 &4292847474359166222
 MeshRenderer:
   m_ObjectHideFlags: 0

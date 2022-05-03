@@ -38,6 +38,7 @@ TagManager:
   - Tutorialmsg
   - SlimoRed
   - KingSlimo
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

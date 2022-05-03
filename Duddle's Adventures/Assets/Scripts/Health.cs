@@ -9,12 +9,16 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float startHealth;
     public float currHealth;
+    private Vector3 respawnpoint;
 
     private void Awake()
     {
         currHealth = startHealth;
     }
-
+    private void Start()
+    {
+        respawnpoint = transform.position;
+    }
     public void Dmg(float _dmg)
     {
         currHealth -= _dmg;
@@ -70,12 +74,19 @@ public class Health : MonoBehaviour
         {
             Dmg(1f);
         }
+    }
 
-
-        if (collision.gameObject.CompareTag("Floor"))
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Floor")
         {
             Dmg(1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            transform.position = respawnpoint;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (collision.tag == "Checkpoint")
+        {
+            respawnpoint = transform.position;
         }
     }
 

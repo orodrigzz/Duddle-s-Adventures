@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         if(currHealth <= 0)
         {
             GameOver.Play();
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameOver");
         }
 
     }

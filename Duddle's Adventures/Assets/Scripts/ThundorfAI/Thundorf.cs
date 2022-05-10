@@ -30,9 +30,8 @@ public class Thundorf : MonoBehaviour
         CheckTimeToFire();
         if (HP <= 0)
         {
-            //Instantiate(Heart, transform.position, transform.rotation);
             Destroy(gameObject);
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Victory");
         }
     }
     void CheckTimeToFire()

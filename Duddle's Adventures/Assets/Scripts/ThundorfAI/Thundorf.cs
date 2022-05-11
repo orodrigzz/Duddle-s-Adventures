@@ -28,7 +28,7 @@ public class Thundorf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healtbar.fillAmount = HP / 10;
+        healtbar.fillAmount = HP / 13;
 
         CheckTimeToFire();
         if (HP <= 0)

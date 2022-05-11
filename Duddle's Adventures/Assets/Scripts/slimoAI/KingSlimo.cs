@@ -20,7 +20,7 @@ public class KingSlimo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healtbar.fillAmount = HP / 10;
+        healtbar.fillAmount = HP / 13;
 
         if (HP <= 0)
         {

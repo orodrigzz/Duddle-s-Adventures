@@ -77308,6 +77308,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6588171829923140547, guid: 8ecf7d330ffa69b4db2339413d385d3b, type: 3}
+      propertyPath: HP
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588171829923140547, guid: 8ecf7d330ffa69b4db2339413d385d3b, type: 3}
       propertyPath: Victory
       value: 
       objectReference: {fileID: 231447}

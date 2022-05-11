@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class KingSlimo : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class KingSlimo : MonoBehaviour
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
     public AudioSource Victory;
+    [SerializeField] private Image healtbar;
 
     public void TakeDamage(float damage)
     {
@@ -18,6 +20,8 @@ public class KingSlimo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healtbar.fillAmount = HP / 10;
+
         if (HP <= 0)
         {
             Victory.Play();

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Thundorf : MonoBehaviour
 {
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
-    public float HP = 3;
-    public GameObject Heart;
+    public float HP = 10;
+    [SerializeField] private Image healtbar;
 
     public GameObject Lightning;
 
@@ -27,6 +28,8 @@ public class Thundorf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healtbar.fillAmount = HP / 10;
+
         CheckTimeToFire();
         if (HP <= 0)
         {

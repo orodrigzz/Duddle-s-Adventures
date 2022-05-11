@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     //for knockback
     public static PlayerController instance;
 
+    public GameObject[] Teleports;
+
     internal void FlipX(bool v)
     {
         spr_render.flipX = v;
@@ -69,10 +71,35 @@ public class PlayerController : MonoBehaviour
         music.Play();
     }
 
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,
+         KeyCode.Alpha6,
+         KeyCode.Alpha7,
+         KeyCode.Alpha8,
+         KeyCode.Alpha9,
+     };
+
+    private int i;
     // Update is called once per frame
     void Update()
     {
-        moveDir = Direction.NONE;
+
+        for (i = 0; i < keyCodes.Length; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i]))
+            {
+                if (Teleports[i] != null)
+                {
+                    this.transform.position = Teleports[i].transform.position;
+                }
+            }
+        }
+
+            moveDir = Direction.NONE;
         isRunning = false;
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))

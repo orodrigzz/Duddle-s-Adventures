@@ -45,7 +45,13 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if(currHealth <= 0)
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            currHealth = 10;
+        }
+
+        if (currHealth <= 0)
         {
             GameOver.Play();
             SceneManager.LoadScene("GameOver");

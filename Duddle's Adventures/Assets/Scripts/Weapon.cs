@@ -51,6 +51,15 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            green = 1;
+            red = 1;
+            yellow = 1;
+            chargedbullet = true;
+        }
+
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);

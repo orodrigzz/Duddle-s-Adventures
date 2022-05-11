@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class slimo : MonoBehaviour
 {
     public float HP = 4;
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
-    public GameObject Heart;
+    [SerializeField] private Image healtbar;
 
     public void TakeDamage(float damage)
     {
@@ -18,9 +19,10 @@ public class slimo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healtbar.fillAmount = HP / 3;
+
         if (HP <= 0)
         {
-            //Instantiate(Heart, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 

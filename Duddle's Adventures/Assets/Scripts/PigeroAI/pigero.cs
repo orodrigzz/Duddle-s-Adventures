@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pigero : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class pigero : MonoBehaviour
     public float knockbackDuration = 1;
     public float HP = 3;
     public AudioSource daño;
+    [SerializeField] private Image healtbar;
 
     // Start is called before the first frame update
 
@@ -20,6 +22,8 @@ public class pigero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healtbar.fillAmount = HP / 3;
+
         if (HP <= 0)
         {
             daño.Play();

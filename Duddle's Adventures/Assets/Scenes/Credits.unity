@@ -273,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113982102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -953, y: -1870, z: 0}
+  m_LocalPosition: {x: -953, y: -1857, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 375079236}
@@ -560,7 +560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -173, y: -96}
+  m_AnchoredPosition: {x: -173, y: -83}
   m_SizeDelta: {x: 308.1285, y: 797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497796301
@@ -596,8 +596,23 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\"Duddle's Adventures\" \nby Sketchy Games\n\nProgrammers\n\n\n\n2D Artists\n\n\n\n2D
-    Animations\n\n\nLevel Design"
+  m_Text: 'Duddle''s Adventure
+
+    by Sketchy Games
+
+
+    Programmers
+
+
+
+
+    2D
+    Artist
+
+
+
+
+    Level Design'
 --- !u!222 &1497796302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -862,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872598314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -952, y: -1628, z: 0}
+  m_LocalPosition: {x: -952, y: -1615, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 375079236}
@@ -1034,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183, y: -96}
-  m_SizeDelta: {x: 308.1285, y: 797}
+  m_AnchoredPosition: {x: 183, y: -104.45239}
+  m_SizeDelta: {x: 308.1285, y: 839.9048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2125129081
 MonoBehaviour:
@@ -1070,8 +1085,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\nAdri\xE0 Pa\xFCls\nOscar Rodr\xEDguez\n\n\nMarc Planas\nAdri\xE0
-    Pa\xFCls\n\n\nMarc Planas\n\n\nAdri\xE0 Pa\xFCls"
+  m_Text: "\n\n\nOscar Rodr\xEDguez\nAdri\xE0 Pa\xFCls\n\n\nMarc Planas\n\n\n\nAdri\xE0
+    Pa\xFCls\nOscar Rodr\xEDguez"
 --- !u!222 &2125129082
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 480873101955758443}
   - component: {fileID: 480873101955758442}
   - component: {fileID: 480873101955758439}
-  - component: {fileID: 480873101955758436}
   - component: {fileID: 480873101955758437}
   m_Layer: 0
   m_Name: Duddle
@@ -197,20 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c387360341ca94cbb87f0e8a477c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOver: {fileID: 0}
   startHealth: 5
   currHealth: 0
---- !u!114 &480873101955758436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2415349992551014747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a6c97962194f44bb779530899bfc92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &480873101955758437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,9 +213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 25
   jumpSpeed: 1100
-  Green: {fileID: 0}
-  Yellow: {fileID: 0}
-  Red: {fileID: 0}
-  Green_: {fileID: 0}
-  Yellow_: {fileID: 0}
-  Red_: {fileID: 0}
+  Jump: {fileID: 0}
+  music: {fileID: 0}
+  Teleports: []

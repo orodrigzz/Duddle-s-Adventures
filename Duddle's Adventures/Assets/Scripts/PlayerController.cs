@@ -271,7 +271,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Slimos" || collision.gameObject.tag == "Pigero" || collision.gameObject.tag == "SlimoGreen" || collision.gameObject.tag == "SlimoYellow" || collision.gameObject.tag == "PigeroGreen" || collision.gameObject.tag == "PigeroYellow" || collision.gameObject.tag == "PigeroRed" || collision.gameObject.tag == "SlimoRed" || collision.gameObject.tag == "Thundorf" || collision.gameObject.tag == "Rayo")
         {
             feedback = true;
-            Debug.Log("a");
         }
     }
 

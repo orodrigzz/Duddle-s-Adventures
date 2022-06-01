@@ -7,14 +7,12 @@ public class Weapon : MonoBehaviour
 {
     public Sprite greenGun;
     public Sprite yellowGun;
-    public Sprite redGun;
     public Sprite gun;
     public Sprite blackGun;
 
     public AudioSource Shoot;
 
     private int green = 0;
-    private int red = 0;
     private int yellow = 0;
     //public int balas = 20;
     private bool chargedbullet = false;
@@ -29,7 +27,6 @@ public class Weapon : MonoBehaviour
 
     public GameObject projectile;
     public GameObject bullet_gr;
-    public GameObject bullet_red;
     public GameObject bullet_yell;
     public GameObject bullet_btw;
     public GameObject ChargedBull;
@@ -45,7 +42,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Image T_;
     [SerializeField] private Image Green_;
     [SerializeField] private Image Yellow_;
-    [SerializeField] private Image Red_;
     [SerializeField] private Image Charged;
 
     // Update is called once per frame
@@ -55,7 +51,6 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             green = 1;
-            red = 1;
             yellow = 1;
             chargedbullet = true;
         }
@@ -139,14 +134,6 @@ public class Weapon : MonoBehaviour
                     spr_render.sprite = gun;
                     projectile = bullet_btw;
                 }
-
-                if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-                {
-                if (red == 1)
-                {
-                    spr_render.sprite = redGun;
-                    projectile = bullet_red;
-                }
                 if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                     {
                     spr_render.sprite = gun;
@@ -154,7 +141,6 @@ public class Weapon : MonoBehaviour
                 }
                 }
             }
-        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -171,15 +157,6 @@ public class Weapon : MonoBehaviour
             {
                 spr_render.sprite = yellowGun;
                 projectile = bullet_yell;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (red == 1)
-            {
-                spr_render.sprite = redGun;
-                projectile = bullet_red;
             }
         }
 
@@ -201,11 +178,6 @@ public class Weapon : MonoBehaviour
             R_.fillAmount = 0;
             Yellow_.fillAmount = 0;
         }
-        if (red == 1)
-        {
-            T_.fillAmount = 0;
-            Red_.fillAmount = 0;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -219,11 +191,6 @@ public class Weapon : MonoBehaviour
         {
             Destroy(collision.gameObject);
             yellow++;
-        }
-        if (collision.tag == "RedCont")
-        {
-            Destroy(collision.gameObject);
-            red++;
         }
         if (collision.tag == "ChargedBullet")
         {

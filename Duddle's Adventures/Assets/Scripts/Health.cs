@@ -10,15 +10,19 @@ public class Health : MonoBehaviour
     [SerializeField] private float startHealth;
     public float currHealth;
     private Vector3 respawnpoint;
+    private Animator anim;
+
+    void Start()
+    {
+        respawnpoint = transform.position;
+        anim = GetComponent<Animator>();
+    }
 
     private void Awake()
     {
         currHealth = startHealth;
     }
-    private void Start()
-    {
-        respawnpoint = transform.position;
-    }
+
     public void Dmg(float _dmg)
     {
         currHealth -= _dmg;

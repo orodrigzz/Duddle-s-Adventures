@@ -11,6 +11,12 @@ public class KingSlimo : MonoBehaviour
     public float knockbackDuration = 1;
     public AudioSource Victory;
     [SerializeField] private Image healtbar;
+    private Animator anim;
+
+    void Start()
+    {
+    }
+
 
     public void TakeDamage(float damage)
     {

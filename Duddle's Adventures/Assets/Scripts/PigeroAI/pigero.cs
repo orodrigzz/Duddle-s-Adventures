@@ -10,11 +10,22 @@ public class pigero : MonoBehaviour
     public float HP = 3;
     public AudioSource daño;
     [SerializeField] private Image healtbar;
+    private Animator anim;
+    private int feedbackID;
+    private bool dmged;
+
+    private int diedID;
+    private bool died;
 
     // Start is called before the first frame update
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void TakeDamage(float damage)
     {
+        anim.SetBool("dmged", true);
         daño.Play();
         HP -= damage;
     }
@@ -22,10 +33,12 @@ public class pigero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("dmged", false);
         healtbar.fillAmount = HP / 3;
 
         if (HP <= 0)
         {
+            anim.SetBool("died", true);
             daño.Play();
             Destroy(gameObject);
         }

@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     private int runningID;
     private int jumpingID;
-    private int feedbackID;
 
     private Vector2 spdVector;
     private Vector2 prevSpd;
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isRunning;
     private bool isJumping;
-    private bool feedback;
     private bool wasJumping;
     private bool jumpPerformed;
     private bool canWallJump;
@@ -62,14 +60,12 @@ public class PlayerController : MonoBehaviour
     
         runningID = Animator.StringToHash("isMoving");
         jumpingID = Animator.StringToHash("isJumping");
-        feedbackID = Animator.StringToHash("feedback");
 
         isRunning = false;
         isJumping = true;
         wasJumping = false;
         jumpPerformed = true;
         canWallJump = false;
-        feedback = false;
 
         moveDir = Direction.NONE;
         music.Play();
@@ -270,7 +266,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Slimos" || collision.gameObject.tag == "Pigero" || collision.gameObject.tag == "SlimoGreen" || collision.gameObject.tag == "SlimoYellow" || collision.gameObject.tag == "PigeroGreen" || collision.gameObject.tag == "PigeroYellow" || collision.gameObject.tag == "PigeroRed" || collision.gameObject.tag == "SlimoRed" || collision.gameObject.tag == "Thundorf" || collision.gameObject.tag == "Rayo")
         {
-            feedback = true;
+            anim.SetBool("dmged", true);
         }
     }
 
@@ -278,7 +274,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Slimos" || collision.gameObject.tag == "Pigero" || collision.gameObject.tag == "SlimoGreen" || collision.gameObject.tag == "SlimoYellow" || collision.gameObject.tag == "PigeroGreen" || collision.gameObject.tag == "PigeroYellow" || collision.gameObject.tag == "PigeroRed" || collision.gameObject.tag == "SlimoRed" || collision.gameObject.tag == "Thundorf" || collision.gameObject.tag == "Rayo")
         {
-            feedback = false;
+            anim.SetBool("dmged", false);
         }
     }
 }

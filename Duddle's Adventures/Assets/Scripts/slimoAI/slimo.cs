@@ -9,20 +9,27 @@ public class slimo : MonoBehaviour
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
     [SerializeField] private Image healtbar;
+    private Animator anim;
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void TakeDamage(float damage)
     {
-        HP -= damage;
-        
+        anim.SetBool("dmged", true);
+        HP -= damage;        
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("dmged", false);
         healtbar.fillAmount = HP / 3;
 
         if (HP <= 0)
         {
+            anim.SetBool("died", true);
             Destroy(gameObject);
         }
 

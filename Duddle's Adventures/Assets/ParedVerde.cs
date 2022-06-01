@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ParedVerde : MonoBehaviour
 {
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Green_bullet")
+        if (collision.gameObject.CompareTag("Green_bullet"))
         {
             Destroy(gameObject);
         }

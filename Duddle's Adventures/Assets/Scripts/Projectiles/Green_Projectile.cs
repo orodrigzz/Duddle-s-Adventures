@@ -21,19 +21,6 @@ public class Green_Projectile : MonoBehaviour
     public GameObject dmgtxt;
     public AudioSource Splash;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject showtut = GameObject.Find("tutorialbox");
-        Tutorial tutscript = showtut.GetComponent<Tutorial>();
-
-        for (int i = minval; i < maxval; i++)
-        {
-            randval = Random.Range(0, 2);
-        }
-        Invoke("DestroyProjectile", lifeTime);
-    }
-
 
     // Update is called once per frame
     void Update()

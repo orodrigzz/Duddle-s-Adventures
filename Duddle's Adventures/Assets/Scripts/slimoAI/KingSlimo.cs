@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class KingSlimo : MonoBehaviour
 {
-    public float HP = 10;
+    public float HP = 8;
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
     public AudioSource Victory;

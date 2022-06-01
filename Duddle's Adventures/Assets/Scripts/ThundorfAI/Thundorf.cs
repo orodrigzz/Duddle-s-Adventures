@@ -8,7 +8,7 @@ public class Thundorf : MonoBehaviour
 {
     public float knockbackPower = 100;
     public float knockbackDuration = 1;
-    public float HP = 10;
+    public float HP = 8;
     [SerializeField] private Image healtbar;
 
     public GameObject Lightning;

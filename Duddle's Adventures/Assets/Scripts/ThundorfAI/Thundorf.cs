@@ -15,11 +15,16 @@ public class Thundorf : MonoBehaviour
 
     public float FireRate;
     public float nextFire;
+    private Animator anim;
 
     // Start is called before the first frame update
-
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     public void TakeDamage(float damage)
     {
+        anim.SetBool("dmged", true);
         FireRate = 1f;
         nextFire = Time.time;
         HP -= damage;
@@ -28,11 +33,13 @@ public class Thundorf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("dmged", false);
         healtbar.fillAmount = HP / 13;
 
         CheckTimeToFire();
         if (HP <= 0)
         {
+            anim.SetBool("died", true);
             Destroy(gameObject);
             SceneManager.LoadScene("Victory");
         }

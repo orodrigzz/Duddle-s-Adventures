@@ -15,21 +15,25 @@ public class KingSlimo : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
 
     public void TakeDamage(float damage)
     {
+        anim.SetBool("dmged", true);
         HP -= damage;
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("dmged", false);
         healtbar.fillAmount = HP / 13;
 
         if (HP <= 0)
         {
+            anim.SetBool("died", true);
             Victory.Play();
             Destroy(gameObject);
             SceneManager.LoadScene("Level2");

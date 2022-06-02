@@ -41,6 +41,7 @@ TagManager:
   - Checkpoint
   - Thundorf
   - Rayo
+  - Plataforma
   layers:
   - Default
   - TransparentFX

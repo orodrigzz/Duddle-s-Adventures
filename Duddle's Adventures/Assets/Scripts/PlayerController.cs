@@ -177,6 +177,12 @@ public class PlayerController : MonoBehaviour
                 {
                     return true;
                 }
+                if (hit.collider.gameObject.tag == "Plataforma")
+                {
+                    jumpPerformed = true;
+                    isJumping = false;
+                    return true;
+                }
             }
         }
         return false;
@@ -184,7 +190,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Scenario")
+        if (collision.gameObject.tag == "Scenario" || collision.gameObject.tag == "Plataforma")
         {
             if (isJumping)
             {
@@ -268,6 +274,11 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("dmged", true);
         }
+
+        if (collision.gameObject.tag == "Plataforma")
+        {
+            transform.parent = collision.transform;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -275,6 +286,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Slimos" || collision.gameObject.tag == "Pigero" || collision.gameObject.tag == "SlimoGreen" || collision.gameObject.tag == "SlimoYellow" || collision.gameObject.tag == "PigeroGreen" || collision.gameObject.tag == "PigeroYellow" || collision.gameObject.tag == "PigeroRed" || collision.gameObject.tag == "SlimoRed" || collision.gameObject.tag == "Thundorf" || collision.gameObject.tag == "Rayo")
         {
             anim.SetBool("dmged", false);
+        }
+
+        if (collision.gameObject.tag == "Plataforma")
+        {
+            transform.parent = null;
         }
     }
 }

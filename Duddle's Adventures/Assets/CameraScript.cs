@@ -10,12 +10,6 @@ public class CameraScript : MonoBehaviour
     public float ForwardMove;
     public float Smoothing;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

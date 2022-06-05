@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-
-    public AudioSource GameOver;
+    private BoxCollider2D box2D;
+    public AudioSource death;
     [SerializeField] private float startHealth;
     public float currHealth;
     private Vector3 respawnpoint;
     private Animator anim;
+    private Rigidbody2D Player;
+
+    public Image Fade;
+    public float valoralfad;
 
     void Start()
     {
         respawnpoint = transform.position;
         anim = GetComponent<Animator>();
+        Player = GetComponent<Rigidbody2D>();
+        box2D = GetComponent<BoxCollider2D>();
     }
 
     private void Awake()
@@ -34,7 +41,7 @@ public class Health : MonoBehaviour
         {
             Dmg(1);
             transform.position = respawnpoint;
-            GameOver.Play();
+            death.Play();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -49,7 +56,6 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.V))
         {
             currHealth = 10;
@@ -57,12 +63,22 @@ public class Health : MonoBehaviour
 
         if (currHealth <= 0)
         {
-            GameOver.Play();
-            SceneManager.LoadScene("GameOver");
+            anim.SetBool("died", true);
+            valoralfad = 2;
         }
 
     }
 
+    private void FixedUpdate()
+    {
+        float valoralfa = Mathf.Lerp(Fade.color.a, valoralfad, .1f);
+        Fade.color = new Color(0, 0, 0, valoralfa);
+
+        if (valoralfa > 0.9f)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Slimos"))
@@ -106,8 +122,6 @@ public class Health : MonoBehaviour
         }
 
     }
-
-
 
     public void AddHealth(float _value)
     {

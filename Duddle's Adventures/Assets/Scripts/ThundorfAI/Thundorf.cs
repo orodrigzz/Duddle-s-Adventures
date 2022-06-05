@@ -44,6 +44,7 @@ public class Thundorf : MonoBehaviour
             SceneManager.LoadScene("Victory");
         }
     }
+
     void CheckTimeToFire()
     {
         if(Time.time > nextFire)

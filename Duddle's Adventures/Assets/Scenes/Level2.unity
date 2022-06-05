@@ -8322,6 +8322,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 686793465864073350, guid: ef7612dea2e2f5549b7f2f35c776c077, type: 3}
   m_PrefabInstance: {fileID: 209702360}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &209780750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209780753}
+  - component: {fileID: 209780752}
+  - component: {fileID: 209780751}
+  m_Layer: 5
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &209780751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209780750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &209780752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209780750}
+  m_CullTransparentMesh: 1
+--- !u!224 &209780753
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209780750}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10.951903, y: 6.3131, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1107489187}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -142, y: 263.49988}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &213308220
 GameObject:
   m_ObjectHideFlags: 0
@@ -29517,6 +29592,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 286396265}
     - target: {fileID: 1532308013593884699, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: Fade
+      value: 
+      objectReference: {fileID: 209780751}
+    - target: {fileID: 1532308013593884699, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
       propertyPath: GameOver
       value: 
       objectReference: {fileID: 428545809}
@@ -47841,6 +47920,7 @@ RectTransform:
   - {fileID: 347512416}
   - {fileID: 553465838}
   - {fileID: 1977664168}
+  - {fileID: 209780753}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67975,11 +68055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6219846153204342559, guid: e24ea37bcc311524da6f1b1b875973a6, type: 3}
       propertyPath: m_Size.y
-      value: 328.7353
+      value: 300.71
       objectReference: {fileID: 0}
     - target: {fileID: 6219846153204342559, guid: e24ea37bcc311524da6f1b1b875973a6, type: 3}
       propertyPath: m_Offset.y
-      value: -555.6323
+      value: -569.645
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e24ea37bcc311524da6f1b1b875973a6, type: 3}
@@ -91080,6 +91160,10 @@ PrefabInstance:
       propertyPath: HP
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4688149359007230736, guid: 22fef4876081c144c9ee8eedf912aa1c, type: 3}
+      propertyPath: Fade
+      value: 
+      objectReference: {fileID: 209780751}
     - target: {fileID: 4688149359007230742, guid: 22fef4876081c144c9ee8eedf912aa1c, type: 3}
       propertyPath: m_RootOrder
       value: 40

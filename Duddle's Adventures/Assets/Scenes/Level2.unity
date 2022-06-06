@@ -29596,6 +29596,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 209780751}
     - target: {fileID: 1532308013593884699, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 428545809}
+    - target: {fileID: 1532308013593884699, guid: 5accd85de1fcd06409ccf0ede578cca3, type: 3}
       propertyPath: GameOver
       value: 
       objectReference: {fileID: 428545809}
@@ -72838,11 +72842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287495728892209762, guid: 03f03fcfac9c0ce43971cbf00586ec46, type: 3}
       propertyPath: m_Size.y
-      value: 357.07266
+      value: 303.65872
       objectReference: {fileID: 0}
     - target: {fileID: 5287495728892209762, guid: 03f03fcfac9c0ce43971cbf00586ec46, type: 3}
       propertyPath: m_Offset.y
-      value: -541.4637
+      value: -568.17065
       objectReference: {fileID: 0}
     - target: {fileID: 5287495728892209763, guid: 03f03fcfac9c0ce43971cbf00586ec46, type: 3}
       propertyPath: m_SortingOrder

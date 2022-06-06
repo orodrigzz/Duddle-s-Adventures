@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 3548110552979599655}
   - component: {fileID: 3548110552979599705}
   - component: {fileID: 3548110552979599704}
-  - component: {fileID: 3548110552979599707}
   - component: {fileID: 3548110552979599706}
   m_Layer: 8
   m_Name: Slimo_PFB_G
@@ -229,21 +228,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &3548110552979599707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3548110552979599654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09123b403987bab469cb5602e065fe12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 200
-  mustPatrol: 0
-  MoveRight: 0
 --- !u!114 &3548110552979599706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,8 +243,10 @@ MonoBehaviour:
   HP: 2.5
   knockbackPower: 200
   knockbackDuration: 2.5
-  Heart: {fileID: 5072693974341557240, guid: ab21d781c064bf64fb6679cc29ba2dcc, type: 3}
   healtbar: {fileID: 8111111430938341649}
+  speed: 200
+  mustPatrol: 0
+  MoveRight: 0
 --- !u!1 &4080952482703808965
 GameObject:
   m_ObjectHideFlags: 0

@@ -186,7 +186,6 @@ GameObject:
   - component: {fileID: 8949063196108475587}
   - component: {fileID: 8949063196108475586}
   - component: {fileID: 8949063196108475585}
-  - component: {fileID: 8949063196108475591}
   - component: {fileID: 8949063196108475590}
   - component: {fileID: 8949063196108475589}
   - component: {fileID: 8949063196108475588}
@@ -282,21 +281,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8949063196108475591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8949063196108475584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37649486cc79674bbaec8e97d439548, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 300
-  mustPatrol: 0
-  MoveRight: 0
 --- !u!114 &8949063196108475590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +298,9 @@ MonoBehaviour:
   HP: 2
   "da\xF1o": {fileID: 0}
   healtbar: {fileID: 4168798249571724438}
+  speed: 300
+  mustPatrol: 0
+  MoveRight: 0
 --- !u!61 &8949063196108475589
 BoxCollider2D:
   m_ObjectHideFlags: 0

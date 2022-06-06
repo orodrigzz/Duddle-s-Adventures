@@ -17,10 +17,19 @@ public class pigero : MonoBehaviour
     private int diedID;
     private bool died;
 
+    private Rigidbody2D rb2d;
+
+    public float speed;
+
+    [HideInInspector]
+    public bool mustPatrol;
+    public bool MoveRight;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float damage)
@@ -39,8 +48,20 @@ public class pigero : MonoBehaviour
         if (HP <= 0)
         {
             anim.SetBool("died", true);
-            daño.Play();
-            Destroy(gameObject);
+            rb2d.constraints = RigidbodyConstraints2D.None;
+            rb2d.mass = 55;
+            speed = 0;
+        }
+
+        if (MoveRight)
+        {
+            transform.Translate(2 * Time.deltaTime * speed, 0, 0);
+            transform.localScale = new Vector2(2, 2);
+        }
+        else
+        {
+            transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
+            transform.localScale = new Vector2(-2, 2);
         }
     }
 
@@ -49,6 +70,26 @@ public class pigero : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             StartCoroutine(PlayerController.instance.Knowckback(knockbackDuration, knockbackPower, this.transform));
+        }
+
+        if (other.gameObject.tag == "Floor" || other.gameObject.tag == "Scenario" || other.gameObject.tag == "Plataforma")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D trig)
+    {
+        if (trig.gameObject.CompareTag("Ground"))
+        {
+            if (MoveRight)
+            {
+                MoveRight = false;
+            }
+            else
+            {
+                MoveRight = true;
+            }
         }
     }
 }

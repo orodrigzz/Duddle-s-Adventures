@@ -51,6 +51,7 @@ public class pigero : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.None;
             rb2d.mass = 55;
             speed = 0;
+            StartCoroutine(WaitForDestroy());
         }
 
         if (MoveRight)
@@ -71,11 +72,6 @@ public class pigero : MonoBehaviour
         {
             StartCoroutine(PlayerController.instance.Knowckback(knockbackDuration, knockbackPower, this.transform));
         }
-
-        if (other.gameObject.tag == "Floor" || other.gameObject.tag == "Scenario" || other.gameObject.tag == "Plataforma")
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D trig)
@@ -91,5 +87,11 @@ public class pigero : MonoBehaviour
                 MoveRight = true;
             }
         }
+    }
+
+    private IEnumerator WaitForDestroy()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

@@ -37661,7 +37661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019275967008910040, guid: e89cf1bfbb70ec54e8d263e7e0e4e249, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Checkpoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89cf1bfbb70ec54e8d263e7e0e4e249, type: 3}
@@ -58280,8 +58280,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1416412229}
     m_Modifications:
     - target: {fileID: 1883542703935604456, guid: 8d9ac8da8775ce94784e58def7a4b6a0, type: 3}
+      propertyPath: m_Size.x
+      value: 931.63574
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883542703935604456, guid: 8d9ac8da8775ce94784e58def7a4b6a0, type: 3}
       propertyPath: m_Size.y
       value: 331.33118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883542703935604456, guid: 8d9ac8da8775ce94784e58def7a4b6a0, type: 3}
+      propertyPath: m_Offset.x
+      value: -809.1477
       objectReference: {fileID: 0}
     - target: {fileID: 1883542703935604456, guid: 8d9ac8da8775ce94784e58def7a4b6a0, type: 3}
       propertyPath: m_Offset.y

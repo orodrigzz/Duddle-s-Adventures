@@ -24,8 +24,8 @@ public class Health : MonoBehaviour
         Player = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
 
-        Fade.color = new Color(0, 0, 0, 1);
-        valoralfad = 0;
+        //Fade.color = new Color(0, 0, 0, 1);
+        //valoralfad = 0;
     }
 
     private void Awake()

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 138891591}
   - component: {fileID: 138891590}
   - component: {fileID: 138891589}
-  - component: {fileID: 138891592}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -256,18 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138891587}
   m_CullTransparentMesh: 1
---- !u!114 &138891592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138891587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120cf4496e1c58244ba5aae2a05c3c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &235771378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,7 +405,6 @@ GameObject:
   - component: {fileID: 512814066}
   - component: {fileID: 512814065}
   - component: {fileID: 512814064}
-  - component: {fileID: 512814063}
   - component: {fileID: 512814067}
   m_Layer: 0
   m_Name: Main Camera
@@ -427,18 +413,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &512814063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512814062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &512814064
 AudioListener:
   m_ObjectHideFlags: 0
@@ -782,7 +756,8 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 60
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7078670028491805591, guid: 2cbcb0b9f572e984b8a3e93581d81e62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cbcb0b9f572e984b8a3e93581d81e62, type: 3}
 --- !u!1 &674319108
 GameObject:

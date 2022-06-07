@@ -91,7 +91,7 @@ public class pigero : MonoBehaviour
 
     private IEnumerator WaitForDestroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }

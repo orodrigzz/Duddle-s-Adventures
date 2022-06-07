@@ -23,6 +23,9 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         Player = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
+
+        Fade.color = new Color(0, 0, 0, 1);
+        valoralfad = 0;
     }
 
     private void Awake()
@@ -71,10 +74,10 @@ public class Health : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float valoralfa = Mathf.Lerp(Fade.color.a, valoralfad, .1f);
+        float valoralfa = Mathf.Lerp(Fade.color.a, valoralfad, .05f);
         Fade.color = new Color(0, 0, 0, valoralfa);
 
-        if (valoralfa > 0.9f)
+        if (valoralfa > 0.9f && valoralfad==2)
         {
             SceneManager.LoadScene("GameOver");
         }

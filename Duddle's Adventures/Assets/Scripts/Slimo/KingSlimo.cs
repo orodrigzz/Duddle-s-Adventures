@@ -29,14 +29,12 @@ public class KingSlimo : MonoBehaviour
     void Update()
     {
         anim.SetBool("dmged", false);
-        healtbar.fillAmount = HP / 13;
+        healtbar.fillAmount = HP / 10;
 
         if (HP <= 0)
         {
             anim.SetBool("died", true);
-            Victory.Play();
-            Destroy(gameObject);
-            SceneManager.LoadScene("Level2");
+            StartCoroutine(WaitForLVL2());
         }
 
     }
@@ -48,5 +46,13 @@ public class KingSlimo : MonoBehaviour
         {
             StartCoroutine(PlayerController.instance.Knowckback(knockbackDuration, knockbackPower, this.transform));
         }
+    }
+
+    private IEnumerator WaitForLVL2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        Victory.Play();
+        SceneManager.LoadScene("Level2");
     }
 }

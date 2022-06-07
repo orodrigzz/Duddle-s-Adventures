@@ -299,7 +299,7 @@ MonoBehaviour:
   HP: 2
   "da\xF1o": {fileID: -3256063128276285628}
   healtbar: {fileID: 4168798249571724438}
-  speed: 300
+  speed: 275
   mustPatrol: 0
   MoveRight: 0
 --- !u!61 &8949063196108475589

@@ -169,7 +169,7 @@ MonoBehaviour:
   knockbackPower: 200
   knockbackDuration: 2.5
   healtbar: {fileID: 8816505067470468082}
-  speed: 250
+  speed: 225
   mustPatrol: 0
   MoveRight: 0
 --- !u!1 &8346351627954019262

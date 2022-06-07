@@ -24,7 +24,6 @@ public class Thundorf : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        anim.SetBool("dmged", true);
         FireRate = 1f;
         nextFire = Time.time;
         HP -= damage;
@@ -59,6 +58,11 @@ public class Thundorf : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             StartCoroutine(PlayerController.instance.Knowckback(knockbackDuration, knockbackPower, this.transform));
+        }
+
+        if (other.gameObject.tag == "ChargedBullet" || other.gameObject.tag == "Yellow_bullet" || other.gameObject.tag == "BW_Bullet" || other.gameObject.tag == "Green_bullet")
+        {
+            anim.SetBool("dmged", true);
         }
     }
 }
